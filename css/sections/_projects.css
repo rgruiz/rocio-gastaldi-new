@@ -1,0 +1,221 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense; /* ❤️ clave para rellenar huecos */
+  gap: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin-top: 5rem;
+}
+  
+  .project {
+    aspect-ratio: 4/3;
+    height: 30vw; /* ✅ Altura fija para todos los proyectos */
+    width: -webkit-fill-available;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.3s ease;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      filter: blur(6px);
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+  }
+
+  .project {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(20px);
+  }
+
+  .project.visible {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  /* Tamaños basados en columnas del grid */
+  .project-1-1 {
+    grid-column: span 4;
+  }
+
+  .project-1-2 {
+    grid-column: span 2;
+  }
+
+  .project-1-4 {
+    grid-column: span 1;
+  }
+
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+  
+    .project-1-1 {
+      grid-column: span 2;
+    }
+  
+    .project-1-2 {
+      grid-column: span 2;
+    }
+  
+    .project-1-4 {
+      grid-column: span 1;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .projects-grid {
+      grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+  
+    .project-1-1,
+    .project-1-2,
+    .project-1-4 {
+      grid-column: span 1;
+    }
+  
+    .project {
+      height: 50vw; /* Más alta en pantallas chicas */
+    }
+  }
+
+  .project:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+  }
+  
+  /* En mobile: siempre a color */
+  @media (max-width: 1024px) {
+    .project {
+      filter: grayscale(0%) !important;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(0,0,0,0.5);
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .overlay-mobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+    color: white;
+    display: none;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 1;
+}
+  
+  /* Solo visible en mobile */
+  @media (max-width: 1024px) {
+    .overlay-mobile {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0.5rem 0.8rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+      color: white;
+      display: block;
+      box-sizing: border-box;
+      pointer-events: none;
+      z-index: 1;
+    }
+  
+    .overlay-mobile h2 {
+      margin: 0;
+      font-size: clamp(0.9rem, 4vw, 1.2rem);
+      line-height: 1.2;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+  
+    .overlay-mobile p {
+      margin: 0.2rem 0 0;
+      font-size: clamp(0.7rem, 3vw, 1rem);
+      opacity: 0.85;
+      white-space: normal;
+      word-break: break-word;
+    }
+  
+    /* También ocultamos el cursor-tooltip en mobile */
+    #project-tooltip {
+      display: none !important;
+    }
+    
+    .project .media-wrapper {
+      filter: grayscale(0%) !important;
+    }
+
+  }
+
+    .proyecto-detalle {
+    padding: 2rem;
+    color: white;
+    background: black;
+  }
+
+  .project .media-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.project .media-wrapper > * {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease;
+}
+
+.project .media-wrapper {
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+.project:hover .media-wrapper {
+  filter: grayscale(0%);
+}
+
+.project .hover-media {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.project:hover .hover-media {
+  opacity: 1;
+}
+
+.project .bg-image,
+.project video {
+  z-index: 1;
+}

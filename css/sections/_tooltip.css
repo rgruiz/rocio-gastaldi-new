@@ -1,0 +1,15 @@
+  .tooltip {
+    position: fixed;
+    display: none;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 10000;
+    white-space: normal;
+    overflow: visible;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }

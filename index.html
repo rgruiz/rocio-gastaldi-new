@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Rocío Gastaldi | Directora y Productora Audiovisual</title>
+  <meta name="description" content="Portfolio oficial de Rocío Gastaldi. Videos comerciales, videoclips y proyectos personales. Directora y productora audiovisual.">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+  <meta property="og:title" content="ROCIO GASTALDI">
+  <meta property="og:description" content="Directora audiovisual. Comerciales, videoclips y proyectos personales.">
+  <meta property="og:image" content="https://rociogastaldi.com/assets/projects/img/2020_selfportrait.jpg">
+  <meta property="og:url" content="https://rociogastaldi.com/">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<nav class="main-nav">
+  <div class="logo">ROCIO GASTALDI</div>
+  <div class="nav-right">
+    <div class="theme-toggle">
+      <button id="theme-cycle-btn">B / W</button>
+    </div>
+    <a href="#about" class="about-link">ABOUT</a>
+  </div>
+</nav>
+<nav class="subnav">
+  <ul id="filter-nav">
+    <li><a href="#" class="filter-btn active" data-filter="all">ALL</a></li>
+    <li><a href="#" class="filter-btn" data-filter="COMMERCIAL">COMMERCIAL</a></li>
+    <li><a href="#" class="filter-btn" data-filter="VIDEO">VIDEO</a></li>
+    <li><a href="#" class="filter-btn" data-filter="PERSONAL">PERSONAL</a></li>
+  </ul>
+</nav>
+<h1 style="display:none;">Portfolio de Rocío Gastaldi - Directora Audiovisual</h1>
+<div class="projects-grid" id="projects-container"></div>
+
+<div id="project-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-info">
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <div class="modal-nav">
+        <button id="prev-project">
+          <i data-feather="skip-back"></i>
+          <span class="nav-label" id="prev-label"></span>
+        </button>
+        <button id="next-project">
+          <span class="nav-label" id="next-label"></span>
+          <i data-feather="skip-forward"></i>
+        </button>
+      </div>
+    </div>
+    <div class="modal-video">
+      <div id="modal-video-wrapper">
+        <div id="modal-video" data-plyr-provider="vimeo" data-plyr-embed-id=""></div>
+      </div>
+    </div>
+    <button class="modal-close" onclick="closeModal()">×</button>
+  </div>
+</div>
+<footer id="footer" class="footer">
+  <section id="about" class="about-section">
+    <video class="about-bg-video" autoplay muted loop playsinline>
+      <source src="assets/img/about/about2.mp4" type="video/mp4" />
+      Tu navegador no soporta videos HTML5.
+    </video>
+    <div class="about-content">
+      <h2>ROCIO GASTALDI</h2>
+      <p>Directora y productora audiovisual con base en Buenos Aires.<br>Trabaja en videoclips, comerciales, escenografía y shows en vivo.</p>
+      <div class="contact-links">
+        <h2>CONTACT</h2>
+        <div class="contact-links glitch-icons">
+          <a href="https://www.instagram.com/rociogastaldi" target="_blank" title="Instagram">
+            <i data-feather="instagram"></i>
+          </a>
+          <a href="mailto:rociogastaldi2@gmail.com" title="Email">
+            <i data-feather="mail"></i>
+          </a>
+          <a href="https://vimeo.com/rociogastaldi" target="_blank" title="Vimeo">
+            <img src="assets/img/icons/vimeo.svg" alt="Vimeo" class="vimeo-icon" />
+          </a>
+        </div>
+      </div>
+      <div class="copyright">
+        © <span id="year"></span> ROCIO GASTALDI. All rights reserved.
+      </div>
+    </div>
+  </section>
+</footer>
+<div id="project-tooltip" class="tooltip"></div>
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script type="module" src="./js/script.js"></script>
+<button id="back-to-top" title="Back to top">
+  <i data-feather="chevron-up"></i>
+</button>
+</body>
+</html>
