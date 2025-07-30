@@ -5,6 +5,7 @@ import { inicializarTooltips } from './_tooltip.js';
 import './_animations.js';
 import { inicializarFiltros } from './_filters.js';
 import './_plyr-init.js';
+import { initLazyMedia } from './_lazyload.js';
 
 import { observarProyectos, resetAnimationIndex } from './_animations.js';
 import { cargarProyectos } from './_loadProjects.js';
@@ -38,5 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     inicializarFiltros();
     resetAnimationIndex();
     observarProyectos();
+    initLazyMedia();
   });
 });
+
+
