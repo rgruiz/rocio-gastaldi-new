@@ -1,7 +1,11 @@
 // _loadingScreen.js
+let startTime = 0;
+
 export function showLoadingScreen() {
   const overlay = document.getElementById('loading-screen');
   if (!overlay) return;
+
+  startTime = Date.now();
 
   const size = 40;
   const cols = Math.ceil(window.innerWidth / size);
@@ -23,8 +27,18 @@ export function showLoadingScreen() {
 
 export function hideLoadingScreen() {
   const overlay = document.getElementById('loading-screen');
-  if (overlay) {
+  if (!overlay) return;
+
+  const elapsed = Date.now() - startTime;
+  const minTime = 1200;
+  const finish = () => {
     overlay.classList.add('hide');
     setTimeout(() => overlay.remove(), 500);
+  };
+
+  if (elapsed < minTime) {
+    setTimeout(finish, minTime - elapsed);
+  } else {
+    finish();
   }
 }
