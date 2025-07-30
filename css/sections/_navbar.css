@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 2.5rem;
     height: 3.5rem;
     position: fixed;
     top: 0;
@@ -181,7 +181,7 @@ body.nav-white .theme-toggle button svg {
   }
 
   .subnav .filter-btn {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
