@@ -79,15 +79,18 @@
   
   @media (max-width: 600px) {
     .projects-grid {
-      grid-template-columns: 1fr; /* 1 columna en móviles */
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
     }
-  
-    .project-1-1,
+
+    .project-1-1 {
+      grid-column: span 2; /* Ocupar el ancho completo */
+    }
+
     .project-1-2,
     .project-1-4 {
-      grid-column: span 1;
+      grid-column: span 1; /* Mitad del ancho */
     }
-  
+
     .project {
       height: 50vw; /* Más alta en pantallas chicas */
     }
