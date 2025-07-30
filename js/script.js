@@ -1,15 +1,13 @@
-import './_modal.js';
+import { openModal, closeModal, setProyectos } from './_modal.js';
 import './_theme.js';
 import { inicializarTooltips } from './_tooltip.js';
-import './_animations.js';
+import { observarProyectos, resetAnimationIndex } from './_animations.js';
 import { inicializarFiltros } from './_filters.js';
 import './_plyr-init.js';
 import { initLazyMedia, loadProjectMedia } from './_lazyload.js';
 
 import { showLoadingScreen, hideLoadingScreen } from './_loadingScreen.js';
-import { observarProyectos, resetAnimationIndex } from './_animations.js';
 import { cargarProyectos } from './_loadProjects.js';
-import { openModal, closeModal, setProyectos } from './_modal.js';
 
 function preloadInitialMedia(count = 4) {
   const projects = Array.from(document.querySelectorAll('.project')).slice(0, count);
