@@ -32,7 +32,7 @@ export function openModal(index) {
       controls: ['play', 'progress', 'mute', 'fullscreen'],
       fullscreen: { enabled: true, fallback: true },
       autoplay: true,
-      muted: true
+      muted: false
     });
   }, 50);
 
