@@ -92,6 +92,20 @@
     color: #eee;
   }
 
+body.nav-white .main-nav,
+body.nav-white .subnav {
+  color: white;
+}
+
+body.nav-white .main-nav .logo {
+  color: white;
+}
+
+body.nav-white .theme-toggle button svg {
+  color: white;
+  stroke: white;
+}
+
     @media (max-width: 768px) {
     .main-nav .theme-toggle svg {
       width: 18px;

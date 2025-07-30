@@ -2,9 +2,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
   const themeBtn = document.getElementById("theme-cycle-btn");
   const themes = ["black", "gray", "white"];
+  const mainNav = document.querySelector('.main-nav');
+  const projects = document.getElementById('projects-container');
+
+  function updateNavbarColor() {
+    const isLight = body.classList.contains('bg-white') || body.classList.contains('bg-gray');
+    const navHeight = mainNav ? mainNav.offsetHeight : 0;
+    const threshold = projects ? projects.offsetTop - navHeight : 0;
+    if (isLight && window.scrollY >= threshold) {
+      body.classList.add('nav-white');
+    } else {
+      body.classList.remove('nav-white');
+    }
+  }
 
   let currentTheme = localStorage.getItem("theme") || "white";
   applyTheme(currentTheme);
+  updateNavbarColor();
+  window.addEventListener('scroll', updateNavbarColor);
 
   themeBtn.addEventListener("click", () => {
     let nextIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
@@ -23,5 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (theme === "black") {
       body.classList.add("bg-black");
     }
+    updateNavbarColor();
   }
 });
