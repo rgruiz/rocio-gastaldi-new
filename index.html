@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Rocío Gastaldi | Directora y Productora Audiovisual</title>
   <meta name="description" content="Portfolio oficial de Rocío Gastaldi. Videos comerciales, videoclips y proyectos personales. Directora y productora audiovisual.">
-  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdn.plyr.io">
+  <link rel="preload" href="fonts/SuisseIntl-SemiBold.otf" as="font" type="font/otf" crossorigin>
+  <script defer src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -16,6 +19,7 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+  <div id="loading-screen"></div>
 <nav class="main-nav">
   <div class="logo">ROCIO GASTALDI</div>
   <div class="nav-right">
@@ -62,8 +66,8 @@
 </div>
 <footer id="footer" class="footer">
   <section id="about" class="about-section">
-    <video class="about-bg-video" autoplay muted loop playsinline>
-      <source src="assets/img/about/about2.mp4" type="video/mp4" />
+    <video class="about-bg-video" autoplay muted loop playsinline preload="none">
+      <source data-src="assets/img/about/about2.mp4" type="video/mp4" />
       Tu navegador no soporta videos HTML5.
     </video>
     <div class="about-content">
@@ -79,7 +83,7 @@
             <i data-feather="mail"></i>
           </a>
           <a href="https://vimeo.com/rociogastaldi" target="_blank" title="Vimeo">
-            <img src="assets/img/icons/vimeo.svg" alt="Vimeo" class="vimeo-icon" />
+            <img src="assets/img/icons/vimeo.svg" alt="Vimeo" class="vimeo-icon" loading="lazy" />
           </a>
         </div>
       </div>
@@ -90,7 +94,7 @@
   </section>
 </footer>
 <div id="project-tooltip" class="tooltip"></div>
-<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script defer src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
@@ -100,3 +104,4 @@
 </button>
 </body>
 </html>
+

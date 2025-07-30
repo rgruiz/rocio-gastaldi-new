@@ -1,11 +1,12 @@
-import './_loadProjects.js'
 import './_modal.js';
 import './_theme.js';
 import { inicializarTooltips } from './_tooltip.js';
 import './_animations.js';
 import { inicializarFiltros } from './_filters.js';
 import './_plyr-init.js';
+import { initLazyMedia } from './_lazyload.js';
 
+import { showLoadingScreen, hideLoadingScreen } from './_loadingScreen.js';
 import { observarProyectos, resetAnimationIndex } from './_animations.js';
 import { cargarProyectos } from './_loadProjects.js';
 import { openModal, closeModal, setProyectos } from './_modal.js';
@@ -13,6 +14,7 @@ import { openModal, closeModal, setProyectos } from './_modal.js';
 // Ejecutar feather icons y demás scripts cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof feather !== 'undefined') feather.replace();
+  showLoadingScreen();
 
   const backToTopBtn = document.getElementById("back-to-top");
 
@@ -38,5 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
     inicializarFiltros();
     resetAnimationIndex();
     observarProyectos();
+    initLazyMedia();
+    hideLoadingScreen();
   });
 });
+
+
