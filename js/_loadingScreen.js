@@ -17,6 +17,11 @@ export function initLoadingScreen() {
     loader.appendChild(row);
   }
 
+  const text = document.createElement('div');
+  text.className = 'loader-text';
+  text.textContent = 'ROCIO GASTALDI';
+  loader.appendChild(text);
+
   // Fallback hide after 10s
   setTimeout(hideLoadingScreen, 10000);
 }
