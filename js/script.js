@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resetAnimationIndex();
     observarProyectos();
     initLazyMedia();
-    monitorFirstProjects(12);
+    monitorFirstProjects(5);
   });
 });
 
