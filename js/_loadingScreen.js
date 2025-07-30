@@ -30,7 +30,12 @@ export function hideLoadingScreen() {
   const loader = document.getElementById('loading-screen');
   if (loader && !loader.classList.contains('hidden')) {
     loader.classList.add('hidden');
-    setTimeout(() => loader.remove(), 500);
+    setTimeout(() => {
+      loader.remove();
+      document.dispatchEvent(new Event('loadingScreenHidden'));
+    }, 500);
+  } else {
+    document.dispatchEvent(new Event('loadingScreenHidden'));
   }
 }
 

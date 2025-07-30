@@ -32,13 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
+  // Iniciar tooltips cuando desaparezca la pantalla de carga
+  document.addEventListener('loadingScreenHidden', inicializarTooltips, { once: true });
+
   // Cargar proyectos y exponer funciones globales
   cargarProyectos((data) => {
     setProyectos(data);
     window.openModal = openModal;
     window.closeModal = closeModal;
-    // ⚡ Activar tooltips ahora que los proyectos están cargados
-    inicializarTooltips();
     inicializarFiltros();
     resetAnimationIndex();
     observarProyectos();
