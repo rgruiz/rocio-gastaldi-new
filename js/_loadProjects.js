@@ -1,4 +1,5 @@
 // _loadProjects.js
+import { initLazyMedia } from './_lazyload.js';
 export async function cargarProyectos(callback) {
   const res = await fetch('./data/proyectos.json');
   const data = await res.json();
@@ -16,14 +17,14 @@ container.innerHTML = proyectos.map((proyecto, index) => {
     const hoverIsVideo = proyecto.imagenHover && proyecto.imagenHover.endsWith(".mp4");
 
     const media = mainIsVideo
-    ? `<video src="${proyecto.imagen}" autoplay muted loop playsinline></video>`
-    : `<div class="bg-image" style="background-image: url('${proyecto.imagen}')"></div>`;
+    ? `<video data-src="${proyecto.imagen}" autoplay muted loop playsinline preload="none"></video>`
+    : `<div class="bg-image" data-bg="${proyecto.imagen}"></div>`;
 
     let hover = "";
     if (proyecto.imagenHover) {
     hover = hoverIsVideo
-        ? `<video class="hover-media" src="${proyecto.imagenHover}" autoplay muted loop playsinline></video>`
-        : `<div class="hover-media" style="background-image: url('${proyecto.imagenHover}')"></div>`;
+        ? `<video class="hover-media" data-src="${proyecto.imagenHover}" autoplay muted loop playsinline preload="none"></video>`
+        : `<div class="hover-media" data-bg="${proyecto.imagenHover}"></div>`;
     }
 
     return `
@@ -42,4 +43,6 @@ container.innerHTML = proyectos.map((proyecto, index) => {
 }).join("");
 }
 
-loadProjects();
+loadProjects().then(initLazyMedia);
+
+
