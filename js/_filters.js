@@ -31,6 +31,8 @@ export function inicializarFiltros() {
           }, 400);
         }
       });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
