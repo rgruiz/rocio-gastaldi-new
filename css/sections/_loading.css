@@ -17,27 +17,6 @@
   opacity: 0;
 }
 
-.loader-row {
-  display: flex;
-  flex-shrink: 0;
-  height: 40px;
-}
-
-.loader-row.offset {
-  padding-left: 20px;
-}
-
-.loader-icon {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-  animation: loader-spin 3s linear infinite;
-}
-
-@keyframes loader-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 .loader-text {
   position: absolute;

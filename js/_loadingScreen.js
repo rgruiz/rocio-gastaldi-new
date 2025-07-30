@@ -1,21 +1,9 @@
 export function initLoadingScreen() {
   const loader = document.getElementById('loading-screen');
   if (!loader) return;
-  const size = 40;
-  const cols = Math.ceil(window.innerWidth / size) + 1;
-  const rows = Math.ceil(window.innerHeight / size);
-
-  for (let r = 0; r < rows; r++) {
-    const row = document.createElement('div');
-    row.className = 'loader-row' + (r % 2 ? ' offset' : '');
-    for (let c = 0; c < cols; c++) {
-      const img = document.createElement('img');
-      img.src = 'assets/img/x.svg';
-      img.className = 'loader-icon';
-      row.appendChild(img);
-    }
-    loader.appendChild(row);
-  }
+  loader.style.backgroundImage = "url('assets/img/x.svg')";
+  loader.style.backgroundRepeat = 'repeat';
+  loader.style.backgroundSize = '40px 40px';
 
   const text = document.createElement('div');
   text.className = 'loader-text';
