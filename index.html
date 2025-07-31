@@ -5,7 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Rocío Gastaldi | Directora y Productora Audiovisual</title>
   <meta name="description" content="Portfolio oficial de Rocío Gastaldi. Videos comerciales, videoclips y proyectos personales. Directora y productora audiovisual.">
-  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdn.plyr.io">
+  <link rel="preload" href="fonts/SuisseIntl-SemiBold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="data/proyectos.json" as="fetch" crossorigin>
+  <script type="module">
+const PRELOAD_COUNT = 5;
+
+fetch("./data/proyectos.json")
+  .then(r => r.json())
+  .then(data => {
+    data.slice(0, PRELOAD_COUNT).forEach(p => {
+      [p.imagen, p.imagenHover].filter(Boolean).forEach(src => {
+        const link = document.createElement("link");
+        link.rel = "preload";
+        link.as = src.endsWith(".mp4") ? "video" : "image";
+        link.href = src;
+        link.fetchPriority = "high";
+        document.head.appendChild(link);
+      });
+    });
+  })
+  .catch(() => {});
+</script>
+  <script defer src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -16,6 +39,7 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<div id="loading-screen"></div>
 <nav class="main-nav">
   <div class="logo">ROCIO GASTALDI</div>
   <div class="nav-right">
@@ -75,7 +99,7 @@
             <i data-feather="mail"></i>
           </a>
           <a href="https://vimeo.com/rociogastaldi" target="_blank" title="Vimeo">
-            <img src="assets/img/icons/vimeo.svg" alt="Vimeo" class="vimeo-icon" />
+            <img src="assets/img/icons/vimeo.svg" alt="Vimeo" class="vimeo-icon" loading="lazy" />
           </a>
         </div>
       </div>
@@ -86,7 +110,7 @@
   </section>
 </footer>
 <div id="project-tooltip" class="tooltip"></div>
-<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script defer src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
@@ -95,4 +119,5 @@
   <i data-feather="chevron-up"></i>
 </button>
 </body>
-</html>
+</html
+

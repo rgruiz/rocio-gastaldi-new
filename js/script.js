@@ -5,6 +5,8 @@ import { inicializarTooltips } from './_tooltip.js';
 import './_animations.js';
 import { inicializarFiltros } from './_filters.js';
 import './_plyr-init.js';
+import { initLazyMedia } from './_lazyload.js';
+import { initLoadingScreen, monitorFirstProjects } from './_loadingScreen.js';
 
 import { observarProyectos, resetAnimationIndex } from './_animations.js';
 import { cargarProyectos } from './_loadProjects.js';
@@ -13,6 +15,8 @@ import { openModal, closeModal, setProyectos } from './_modal.js';
 // Ejecutar feather icons y demás scripts cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof feather !== 'undefined') feather.replace();
+
+  initLoadingScreen();
 
   const backToTopBtn = document.getElementById("back-to-top");
 
@@ -28,15 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
+  // Iniciar tooltips cuando desaparezca la pantalla de carga
+  document.addEventListener('loadingScreenHidden', inicializarTooltips, { once: true });
+
   // Cargar proyectos y exponer funciones globales
   cargarProyectos((data) => {
     setProyectos(data);
     window.openModal = openModal;
     window.closeModal = closeModal;
-    // ⚡ Activar tooltips ahora que los proyectos están cargados
-    inicializarTooltips();
     inicializarFiltros();
     resetAnimationIndex();
     observarProyectos();
+    initLazyMedia();
+    monitorFirstProjects(5);
   });
 });
+
+
