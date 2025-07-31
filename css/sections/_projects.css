@@ -17,7 +17,6 @@
     position: relative;
     display: block;
     text-decoration: none;
-    border-radius: 8px;
     overflow: hidden;
     filter: grayscale(100%);
     transition: filter 0.4s ease, transform 0.3s ease;
