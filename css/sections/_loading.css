@@ -7,7 +7,8 @@
   background: black;
   z-index: 10000;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   pointer-events: none;
   transition: opacity 0.5s ease;
@@ -17,46 +18,23 @@
   opacity: 0;
 }
 
-.loader-row {
-  display: flex;
-  flex-shrink: 0;
-  height: 40px;
-}
-
-.loader-row.offset {
-  padding-left: 20px;
-}
-
-.loader-icon {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-  animation: loader-spin 3s linear infinite;
-}
-
-@keyframes loader-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .loader-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: white;
   font-size: clamp(1.5rem, 8vw, 3rem);
   pointer-events: none;
   z-index: 1;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  animation: loader-text-pulse 2s ease-in-out infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid currentColor;
+  animation: typing 3s steps(14, end), blink 0.8s step-end infinite;
 }
 
-@keyframes loader-text-pulse {
-  0%, 100% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-  }
+@keyframes typing {
+  from { width: 0; }
+  to { width: 14ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }

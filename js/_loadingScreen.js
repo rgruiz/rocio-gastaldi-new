@@ -1,26 +1,18 @@
 export function initLoadingScreen() {
   const loader = document.getElementById('loading-screen');
   if (!loader) return;
-  const size = 40;
-  const cols = Math.ceil(window.innerWidth / size) + 1;
-  const rows = Math.ceil(window.innerHeight / size);
-
-  for (let r = 0; r < rows; r++) {
-    const row = document.createElement('div');
-    row.className = 'loader-row' + (r % 2 ? ' offset' : '');
-    for (let c = 0; c < cols; c++) {
-      const img = document.createElement('img');
-      img.src = 'assets/img/x.svg';
-      img.className = 'loader-icon';
-      row.appendChild(img);
-    }
-    loader.appendChild(row);
-  }
-
   const text = document.createElement('div');
   text.className = 'loader-text';
-  text.textContent = 'ROCIO GASTALDI';
   loader.appendChild(text);
+
+  const full = 'ROCIO GASTALDI';
+  let idx = 0;
+  const interval = setInterval(() => {
+    text.textContent = full.slice(0, ++idx);
+    if (idx === full.length) {
+      clearInterval(interval);
+    }
+  }, 100);
 
   // Fallback hide after 10s
   setTimeout(hideLoadingScreen, 10000);
