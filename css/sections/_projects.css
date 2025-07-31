@@ -82,11 +82,11 @@
       grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
     }
 
-    .project-1-1 {
+    .project-1-1,
+    .project-1-2 {
       grid-column: span 2; /* Ocupar el ancho completo */
     }
 
-    .project-1-2,
     .project-1-4 {
       grid-column: span 1; /* Mitad del ancho */
     }
