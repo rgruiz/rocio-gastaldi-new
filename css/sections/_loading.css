@@ -26,15 +26,4 @@
   overflow: hidden;
   pointer-events: none;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  border-right: 0.1em solid white;
-  animation: loader-caret 1s step-end infinite;
-}
-
-.loader-text.typing-complete {
-  border-right: none;
-}
-
-@keyframes loader-caret {
-  0%, 50% { border-color: transparent; }
-  51%, 100% { border-color: white; }
 }

@@ -12,8 +12,6 @@ export function initLoadingScreen() {
     textEl.textContent = content.slice(0, index);
     if (index++ < content.length) {
       setTimeout(type, 100);
-    } else {
-      textEl.classList.add('typing-complete');
     }
   })();
 
