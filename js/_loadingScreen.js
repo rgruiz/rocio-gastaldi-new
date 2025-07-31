@@ -1,26 +1,21 @@
 export function initLoadingScreen() {
   const loader = document.getElementById('loading-screen');
   if (!loader) return;
-  const size = 40;
-  const cols = Math.ceil(window.innerWidth / size) + 1;
-  const rows = Math.ceil(window.innerHeight / size);
 
-  for (let r = 0; r < rows; r++) {
-    const row = document.createElement('div');
-    row.className = 'loader-row' + (r % 2 ? ' offset' : '');
-    for (let c = 0; c < cols; c++) {
-      const img = document.createElement('img');
-      img.src = 'assets/img/x.svg';
-      img.className = 'loader-icon';
-      row.appendChild(img);
+  const textEl = document.createElement('div');
+  textEl.className = 'loader-text';
+  loader.appendChild(textEl);
+
+  const content = 'ROCIO GASTALDI';
+  let index = 0;
+  (function type() {
+    textEl.textContent = content.slice(0, index);
+    if (index++ < content.length) {
+      setTimeout(type, 100);
+    } else {
+      textEl.classList.add('typing-complete');
     }
-    loader.appendChild(row);
-  }
-
-  const text = document.createElement('div');
-  text.className = 'loader-text';
-  text.textContent = 'ROCIO GASTALDI';
-  loader.appendChild(text);
+  })();
 
   // Fallback hide after 10s
   setTimeout(hideLoadingScreen, 10000);
