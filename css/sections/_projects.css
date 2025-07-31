@@ -61,6 +61,7 @@
   @media (max-width: 1024px) {
     .projects-grid {
       grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+      padding: 0.5rem 0.5rem;
     }
   
     .project-1-1 {

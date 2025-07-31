@@ -25,7 +25,6 @@
   }
   
   .about-link {
-    font-size: 0.95rem;
     text-decoration: none;
     color: currentColor;
     border: none; /* eliminamos el borde */
@@ -49,8 +48,7 @@
   /* Responsive */
   @media (max-width: 768px) {
     .about-link {
-      font-size: 0.8rem;
-      padding: 0.2rem 0.6rem;
+      padding: 0.2rem 0.2rem;
     }
   }
   
@@ -61,6 +59,7 @@
   }
   
   .main-nav .theme-toggle button {
+    font-size: 0.8rem;
     background: none;
     border: none;
     padding: 0.4rem;
@@ -139,8 +138,9 @@ body.nav-white .theme-toggle button svg {
 }
 
 .subnav .filter-btn {
+  font-family: 'SuisseIntlReg', sans-serif !important;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400 !important;
   color: inherit;
   position: relative;
   padding-bottom: 0.3rem;
@@ -181,7 +181,7 @@ body.nav-white .theme-toggle button svg {
   }
 
   .subnav .filter-btn {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
   }
 }
 
@@ -194,4 +194,12 @@ body.nav-white .theme-toggle button svg {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (max-width: 1024px) {
+
+  .main-nav {
+    padding: 0 1rem;
+  }
+
 }
