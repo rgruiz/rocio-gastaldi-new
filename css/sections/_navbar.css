@@ -15,13 +15,64 @@
   
   .main-nav .logo {
     pointer-events: auto;
+    flex: 0 0 auto;
+  }
+  
+  .main-nav .center-nav {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    pointer-events: auto;
+  }
+  
+  .main-nav .center-nav .filter-btn {
+    font-family: 'ArchivoRegular', sans-serif !important;
+    text-decoration: none;
+    font-size: 13pt;
+    font-weight: 400 !important;
+    color: inherit;
+    position: relative;
+    padding-bottom: 0.3rem;
+    transition: color 0.3s ease;
+  }
+  
+  .main-nav .center-nav .filter-btn.active {
+    border-bottom: 2px solid var(--color-secondary);
+  }
+  
+  .main-nav .center-nav .filter-btn:hover {
+    color: currentColor;
+    opacity: 0.6;
+  }
+  
+  .main-nav .center-nav .filter-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .main-nav .center-nav .filter-btn.active::after {
+    transform: scaleX(1);
   }
   
   .main-nav .nav-right {
     display: flex;
     align-items: center;
-    gap: 1.5rem; /* Aumentamos un poco para que no se pisen */
+    gap: 1.5rem;
     pointer-events: auto;
+    flex: 0 0 auto;
   }
   
   .about-link {
@@ -47,6 +98,23 @@
   
   /* Responsive */
   @media (max-width: 768px) {
+    .main-nav {
+      flex-direction: column;
+      height: auto;
+      padding: 0 1rem;
+    }
+    .main-nav .center-nav {
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.65rem;
+    }
+    .main-nav .theme-toggle svg {
+      width: 18px;
+      height: 18px;
+    }
+    .main-nav .theme-toggle button {
+      padding: 0.2rem;
+    }
     .about-link {
       padding: 0.2rem 0.2rem;
     }
@@ -59,7 +127,6 @@
   }
   
   .main-nav .theme-toggle button {
-    font-size: 0.8rem;
     background: none;
     border: none;
     padding: 0.4rem;
@@ -104,74 +171,6 @@ body.nav-white .theme-toggle button svg {
   color: white;
   stroke: white;
 }
-
-    @media (max-width: 768px) {
-    .main-nav .theme-toggle svg {
-      width: 18px;
-      height: 18px;
-    }
-  
-    .main-nav .theme-toggle button {
-      padding: 0.2rem;
-    }
-  }
-
-.subnav {
-  position: sticky;
-  top: 3.5rem;
-  z-index: 999;
-  background-color: var(--color-primary);
-  padding: 0.5rem 1rem;
-  text-align: center;
-  animation: fadeSlideDown 0.6s ease forwards;
-  animation-delay: 0.2s;
-  opacity: 0;
-}
-
-.subnav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
-}
-
-.subnav .filter-btn {
-  font-family: 'Archivo', sans-serif !important;
-  text-decoration: none;
-  font-size: 13pt;
-  font-weight: 400 !important;
-  color: inherit;
-  position: relative;
-  padding-bottom: 0.3rem;
-  transition: color 0.3s ease;
-}
-
-.subnav .filter-btn.active {
-  border-bottom: 2px solid var(--color-secondary);
-}
-
-.subnav .filter-btn:hover {
-  color: currentColor;
-  opacity: 0.6;
-}
-
-.subnav .filter-btn::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 100%;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.subnav .filter-btn.active::after {
-  transform: scaleX(1);
 }
 
 @media (max-width: 768px) {

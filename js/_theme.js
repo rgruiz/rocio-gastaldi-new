@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projects = document.getElementById('projects-container');
 
   let navHeight = mainNav ? mainNav.offsetHeight : 0;
-  let threshold = projects ? projects.offsetTop - navHeight : 0;
+  let threshold = projects ? projects.offsetTop - navHeight + 100 : 100;
 
   function updateNavbarColor() {
     const isLight = body.classList.contains('bg-white');
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener('resize', () => {
     navHeight = mainNav ? mainNav.offsetHeight : 0;
-    threshold = projects ? projects.offsetTop - navHeight : 0;
+    threshold = projects ? projects.offsetTop - navHeight + 100 : 100;
     updateNavbarColor();
   });
 

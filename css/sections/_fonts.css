@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Archivo';
-  src: url('../fonts/Archivo-Regular.ttf') format('ttf');
-  font-weight: 800;
+  font-family: 'ArchivoRegular';
+  src: url('../../fonts/Archivo-Regular.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'ArchivoRegular', sans-serif;
   letter-spacing: 0.05em;
   font-size: 13pt;
 }
@@ -15,7 +15,7 @@ body {
 *,
 *::before,
 *::after {
-  font-family: 'Archivo', sans-serif !important;
+  font-family: 'ArchivoRegular', sans-serif !important;
   letter-spacing: 0.05em !important;
   font-weight: 600 !important;
   font-size: 13pt;
