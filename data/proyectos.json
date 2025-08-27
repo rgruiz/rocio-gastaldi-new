@@ -124,8 +124,8 @@
     "id": "yo-soy-la-disco",
     "titulo": "YO SOY LA DISCO",
     "cliente": "EMMA HORVILLEUR",
-    "imagen": "assets/projects/img/yo-soy-la-disco.png",
-    "imagenHover": "",
+    "imagen": "assets/projects/img/PORTADA YSLD-min.png",
+    "imagenHover": "assets/projects/img/yo-soy-la-disco.png",
     "descripcion": "Dirección creativa y producción completa del videoclip.",
     "video": "https://player.vimeo.com/video/797791928",
     "size": "1/4",
@@ -174,28 +174,6 @@
     "video": "https://player.vimeo.com/video/543730072",
     "size": "1/4",
     "tipo": "VIDEO"
-  },
-  {
-    "id": "el-ojo-de-dios",
-    "titulo": "EL OJO DE DIOS",
-    "cliente": "ROCIO GASTALDI",
-    "imagen": "assets/projects/img/el-ojo-de-dios.jpg",
-    "imagenHover": "",
-    "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/528456675",
-    "size": "1/2",
-    "tipo": "PERSONAL"
-  },
-  {
-    "id": "2020-selfportrait",
-    "titulo": "2020_SELFPORTRAIT",
-    "cliente": "ROCIO GASTALDI",
-    "imagen": "assets/projects/img/2020_selfportrait.jpg",
-    "imagenHover": "",
-    "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/446380595",
-    "size": "1/2",
-    "tipo": "PERSONAL"
   },
   {
     "id": "son-otros-tiempos",
