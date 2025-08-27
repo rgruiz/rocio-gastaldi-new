@@ -21,7 +21,7 @@
 
 .loader-text {
   color: white;
-  font-size: clamp(1.5rem, 8vw, 3rem);
+  font-size: 26pt;
   white-space: nowrap;
   overflow: hidden;
   pointer-events: none;
