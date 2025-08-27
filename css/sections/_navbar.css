@@ -138,8 +138,9 @@ body.nav-white .theme-toggle button svg {
 }
 
 .subnav .filter-btn {
-  font-family: 'SuisseIntlReg', sans-serif !important;
+  font-family: 'Archivo', sans-serif !important;
   text-decoration: none;
+  font-size: 13pt;
   font-weight: 400 !important;
   color: inherit;
   position: relative;
