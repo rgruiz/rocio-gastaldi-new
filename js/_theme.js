@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
   const themeBtn = document.getElementById("theme-cycle-btn");
   const themes = ["black", "white"];
-  const vimeoIcon = document.querySelector('.vimeo-icon');
   const mainNav = document.querySelector('.main-nav');
   const projects = document.getElementById('projects-container');
 
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener('resize', () => {
     navHeight = mainNav ? mainNav.offsetHeight : 0;
-    threshold = projects ? projects.offsetTop - navHeight + 100 : 100;
+    threshold = projects ? projects.offsetTop - navHeight + 50 : 50;
     updateNavbarColor();
   });
 
@@ -40,11 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.remove("bg-white", "bg-black");
 
     if (theme === "white") {
-      body.classList.add("bg-white");
-      vimeoIcon.setAttribute('src', 'assets/img/icons/vimeo.svg');
+      body.classList.add("bg-white");      // Add a 100px offset so the color changes after scrolling past the projects section
+      let threshold = projects ? projects.offsetTop - navHeight + 50 : 50;
     } else if (theme === "black") {
       body.classList.add("bg-black");
-      vimeoIcon.setAttribute('src', 'assets/img/icons/vimeo-black.svg');
     }
     updateNavbarColor();
   }

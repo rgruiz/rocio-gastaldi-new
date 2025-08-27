@@ -17,6 +17,5 @@ body {
 *::after {
   font-family: 'ArchivoRegular', sans-serif !important;
   letter-spacing: 0.05em !important;
-  font-weight: 600 !important;
   font-size: 13pt;
 }

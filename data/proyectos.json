@@ -13,7 +13,7 @@
   {
     "id": "ella-tiene",
     "titulo": "ELLA TIENE",
-    "cliente": "NATHY PELUSO & TIAGO PZK",
+    "cliente": "NATHY PELUSO + TIAGO PZK",
     "imagen": "assets/projects/img/shotentera.jpeg",
     "imagenHover": "",
     "descripcion": "Dirección creativa y producción completa del videoclip.",
@@ -24,7 +24,7 @@
   {
     "id": "piel",
     "titulo": "PIEL",
-    "cliente": "TIAGO PZK & KE PERSONAJES",
+    "cliente": "TIAGO PZK + KE PERSONAJES",
     "imagen": "assets/projects/img/piel-tiago.jpg",
     "imagenHover": "",
     "descripcion": "Dirección creativa y producción completa del videoclip.",
@@ -46,7 +46,7 @@
 
   {
     "id": "smirnoff-nathy",
-    "titulo": "SMIRNOFF x Nathy Peluso",
+    "titulo": "SMIRNOFF x NATHY PELUSO",
     "cliente": "SMIRNOFF",
     "imagen": "assets/projects/img/SMIRNOFF.png",
     "imagenHover": "",
@@ -79,7 +79,7 @@
   },
   {
     "id": "abrazame",
-    "titulo": "Abrazame",
+    "titulo": "ABRAZAME",
     "cliente": "K4",
     "imagen": "assets/projects/img/k4-abrazame.png",
     "imagenHover": "",
@@ -90,7 +90,7 @@
   },
   {
     "id": "guerrero",
-    "titulo": "Guerrero",
+    "titulo": "GUERRERO",
     "cliente": "EMILIA",
     "imagen": "assets/projects/img/emilia-guerrero.png",
     "imagenHover": "",
@@ -135,7 +135,7 @@
   {
     "id": "jala-jala",
     "titulo": "JALA JALA",
-    "cliente": "PACO AMOROSO FT. CA7RIEL",
+    "cliente": "CATRIEL + PACO AMOROSO",
     "imagen": "assets/projects/img/paco-catriel-jala-jala.jpg",
     "imagenHover": "",
     "descripcion": "Dirección creativa y producción completa del videoclip.",
@@ -168,7 +168,7 @@
     {
     "id": "cama-vacia",
     "titulo": "CAMA VACÍA",
-    "cliente": "ECKO FT. CAZZU",
+    "cliente": "ECKO + CAZZU",
     "imagen": "assets/projects/img/ecko-cama-vacia.jpg",
     "imagenHover": "",
     "descripcion": "Dirección creativa y producción completa del videoclip.",
@@ -211,7 +211,7 @@
   },  
   {
     "id": "son-otros-tiempos",
-    "titulo": "Son otros tiempos",
+    "titulo": "SON OTROS TIEMPOS",
     "cliente": "QUILMES",
     "imagen": "assets/projects/img/quilmes.png",
     "imagenHover": "",
