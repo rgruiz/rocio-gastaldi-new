@@ -2,6 +2,7 @@
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
+    height: 100dvh; /* mobile dynamic viewport */
     background: black;
     display: none;
     flex-direction: row;
@@ -42,6 +43,8 @@
   .modal.video-only .modal-content {
     width: 100vw;
     height: 100vh;
+    height: 100dvh; /* mobile address bar safe */
+    overflow: hidden;
   }
 
   .modal.video-only .modal-video {
@@ -97,6 +100,22 @@
     word-break: break-word;
   }
 
+  /* Portrait-only fixes: ensure true viewport height and centering on mobile */
+  @media (orientation: portrait) {
+    .modal.video-only,
+    .modal.video-only .modal-content,
+    .modal.video-only .modal-video {
+      height: 100svh !important;
+      min-height: 100svh !important;
+    }
+
+    .modal.video-only .modal-video {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+  }
+
   @media (max-width: 1024px) {
 
     .modal-content {
@@ -129,6 +148,26 @@
       right: 1rem;
       font-size: 1.8rem;
       padding-top: 2.5rem;
+    }
+
+    /* Video-only: keep real fullscreen and prevent scroll on mobile */
+    .modal.video-only .modal-content {
+      flex-direction: row;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh; /* prefer dynamic viewport on mobile */
+      overflow: hidden !important;
+    }
+
+    .modal.video-only .modal-video {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 100dvh;
+    }
+
+    .modal.video-only .modal-close {
+      top: max(1rem, env(safe-area-inset-top));
+      right: max(1rem, env(safe-area-inset-right));
     }
   
     .modal-nav {

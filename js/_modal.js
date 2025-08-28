@@ -30,9 +30,17 @@ export function openModal(index) {
     const embedElement = wrapper.querySelector('.plyr__video-embed');
     window.player = new Plyr(embedElement, {
       controls: ['play', 'progress', 'mute', 'fullscreen'],
+      hideControls: true,
       fullscreen: { enabled: true, fallback: true },
       autoplay: true,
-      muted: false
+      muted: false,
+      vimeo: {
+        controls: false,
+        byline: false,
+        portrait: false,
+        title: false,
+        playsinline: true
+      }
     });
   }, 50);
 
@@ -49,6 +57,12 @@ export function openModal(index) {
     modal.classList.add("video-only");
   } else {
     modal.classList.remove("video-only");
+  }
+  // Special handling for portrait-shot asset (jala-jala)
+  if (proyecto.id === "jala-jala") {
+    modal.classList.add("portrait-asset");
+  } else {
+    modal.classList.remove("portrait-asset");
   }
   modal.style.display = "flex";
 }
@@ -72,6 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inicializa un player vacío por defecto para evitar errores al cerrar el modal sin video
   player = new Plyr('#modal-video', {
     controls: ['play', 'progress', 'mute', 'fullscreen'],
-    fullscreen: { enabled: true, fallback: true }
+    hideControls: true,
+    fullscreen: { enabled: true, fallback: true },
+    vimeo: {
+      controls: false,
+      byline: false,
+      portrait: false,
+      title: false,
+      playsinline: true
+    }
   });
 });
