@@ -7,6 +7,25 @@ export function setProyectos(data) {
 let currentIndex = 0;
 let player;
 
+function lockBodyScroll() {
+  const scrollY = window.scrollY || window.pageYOffset || 0;
+  document.body.dataset.scrollLockY = String(scrollY);
+  document.body.classList.add('scroll-locked');
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.width = '100%';
+}
+
+function unlockBodyScroll() {
+  const y = parseInt(document.body.dataset.scrollLockY || '0', 10) || 0;
+  document.body.classList.remove('scroll-locked');
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  delete document.body.dataset.scrollLockY;
+  window.scrollTo(0, y);
+}
+
 export function openModal(index) {
   currentIndex = index;
   const proyecto = proyectos[index];
@@ -64,12 +83,14 @@ export function openModal(index) {
   } else {
     modal.classList.remove("portrait-asset");
   }
+  lockBodyScroll();
   modal.style.display = "flex";
 }
 
 export function closeModal() {
   window.player?.stop();
   document.getElementById("project-modal").style.display = "none";
+  unlockBodyScroll();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -94,6 +115,33 @@ document.addEventListener("DOMContentLoaded", () => {
       portrait: false,
       title: false,
       playsinline: true
+    }
+  });
+
+  // Keyboard support: Esc to close, arrows to navigate when nav is visible
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('project-modal');
+    const isOpen = modal && modal.style.display === 'flex';
+    if (!isOpen) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeModal();
+      return;
+    }
+
+    // Only allow arrow navigation when the info/nav is visible (not in video-only)
+    const videoOnly = modal.classList.contains('video-only');
+    if (!videoOnly) {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        currentIndex = (currentIndex + 1) % proyectos.length;
+        openModal(currentIndex);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        currentIndex = (currentIndex - 1 + proyectos.length) % proyectos.length;
+        openModal(currentIndex);
+      }
     }
   });
 });

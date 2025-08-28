@@ -9,6 +9,12 @@
     z-index: 9999;
     color: white;
   }
+
+  /* Lock background scroll when modal is open */
+  body.scroll-locked {
+    overflow: hidden !important;
+    overscroll-behavior: contain;
+  }
   
   .modal-content {
     display: flex;
