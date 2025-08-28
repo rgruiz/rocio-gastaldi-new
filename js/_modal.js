@@ -44,7 +44,13 @@ export function openModal(index) {
   document.getElementById("prev-label").innerText = `${prevProyecto.titulo}${prevProyecto.cliente ? ' · ' + prevProyecto.cliente : ''}`;
   document.getElementById("next-label").innerText = `${nextProyecto.titulo}${nextProyecto.cliente ? ' · ' + nextProyecto.cliente : ''}`;
 
-  document.getElementById("project-modal").style.display = "flex";
+  const modal = document.getElementById("project-modal");
+  if (proyecto.tipo === "VIDEO" || proyecto.tipo === "COMMERCIAL") {
+    modal.classList.add("video-only");
+  } else {
+    modal.classList.remove("video-only");
+  }
+  modal.style.display = "flex";
 }
 
 export function closeModal() {

@@ -33,6 +33,27 @@
     background: black;
     min-height: 60vh;
   }
+
+  .modal.video-only .modal-info {
+    display: none;
+  }
+
+  /* Video-only mode: make the player truly fullscreen */
+  .modal.video-only .modal-content {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .modal.video-only .modal-video {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: black;
+  }
   
   .modal-close {
     position: absolute;
@@ -41,7 +62,7 @@
     font-size: 2rem;
     background: none;
     border: none;
-    color: red;
+    color: white;
     cursor: pointer;
   }
   
