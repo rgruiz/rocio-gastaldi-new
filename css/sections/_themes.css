@@ -15,7 +15,3 @@
     gap: 0.8rem;
     z-index: 9999;
   }
-  
-  .theme-toggle button.active {
-    transform: scale(1.3);
-  }

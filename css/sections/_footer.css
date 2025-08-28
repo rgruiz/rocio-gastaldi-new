@@ -67,12 +67,13 @@
   .about-section {
     padding: 0rem 1rem;
   }
-
-  .about-content h2 {
-    font-size: 1.5rem;
-  }
   .about-content p {
-    font-size: 0.8rem;
+    font-size: 10pt;
+  }
+
+  .about-content .copyright, 
+  .about-content span{
+    font-size: 10pt;
   }
 
 }
