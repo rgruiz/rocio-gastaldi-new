@@ -77,23 +77,34 @@
 <div id="project-modal" class="modal">
   <div class="modal-content">
     <div class="modal-info">
-      <h2 id="modal-title"></h2>
-      <p id="modal-description"></p>
-      <div class="modal-nav">
-        <button id="prev-project">
-          <i data-feather="skip-back"></i>
-          <span class="nav-label" id="prev-label"></span>
-        </button>
-        <button id="next-project">
-          <span class="nav-label" id="next-label"></span>
-          <i data-feather="skip-forward"></i>
-        </button>
+      <div class="modal-info-block" id="modal-info-default">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+      </div>
+      <div class="modal-info-block creative-info-panel" id="modal-info-creative">
+        <h2 id="creative-title"></h2>
+        <ul id="creative-meta"></ul>
       </div>
     </div>
     <div class="modal-video">
       <div id="modal-video-wrapper">
         <div id="modal-video" data-plyr-provider="vimeo" data-plyr-embed-id=""></div>
       </div>
+      <div id="modal-creative-wrapper" class="modal-creative-wrapper">
+        <div class="creative-carousel">
+          <div class="creative-track" id="creative-track" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-nav">
+      <button id="prev-project">
+        <i data-feather="skip-back"></i>
+        <span class="nav-label" id="prev-label"></span>
+      </button>
+      <button id="next-project">
+        <span class="nav-label" id="next-label"></span>
+        <i data-feather="skip-forward"></i>
+      </button>
     </div>
     <button class="modal-close" onclick="closeModal()">×</button>
   </div>

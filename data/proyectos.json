@@ -33,6 +33,30 @@
     "tipo": "VIDEO"
   },
   {
+    "id": "entre-tanta-gente",
+    "titulo": "ENTRE TANTA GENTE",
+    "cliente": "SEBASTIAN YATRA",
+    "imagen": "assets/cd/yatra/entre-tanta-gente/stage-2.jpg",
+    "imagenHover": "assets/cd/yatra/entre-tanta-gente/stage-1.jpg",
+    "etg": {
+      "title": "SHOW DIRECTION",
+      "artist": "SEBASTIAN YATRA",
+      "project": "ENTRE TANTA GENTE summer tour",
+      "year": "2025",
+      "label": "UNIVERSAL"
+    },
+    "carouselAssets": [
+      "assets/cd/yatra/entre-tanta-gente/intro.jpg",
+      "assets/cd/yatra/entre-tanta-gente/text-1.png",
+      "assets/cd/yatra/entre-tanta-gente/stage-3.jpg",
+      "assets/cd/yatra/entre-tanta-gente/stage-2.jpg",
+      "assets/cd/yatra/entre-tanta-gente/text-2.png",
+      "assets/cd/yatra/entre-tanta-gente/stage-1.jpg"
+    ],
+    "size": "1/2",
+    "tipo": "CREATIVE"
+  },
+  {
     "id": "bby-katana",
     "titulo": "BBY KATANA",
     "cliente": "TAICHU",
@@ -100,6 +124,32 @@
     "tipo": "VIDEO"
   },
   {
+    "id": "1915-fuera-de-lugar",
+    "titulo": "FUERA DE LUGAR",
+    "cliente": "1915",
+    "imagen": "assets/cd/1915/fuera-de-lugar/9-video.mp4",
+    "imagenHover": "assets/projects/img/fuera-de-lugar.jpg",
+    "etg": {
+      "title": "FILM DIRECTION",
+      "artist": "1915",
+      "project": "FUERA DE LUGAR (ALBUM)",
+      "year": "2022",
+      "label": "SONY MUSIC"
+    },
+    "carouselAssets": [
+      "assets/cd/1915/fuera-de-lugar/1-artwork.jpg",
+      "assets/cd/1915/fuera-de-lugar/2-scene.png",
+      "assets/cd/1915/fuera-de-lugar/3-scene.png",
+      "assets/cd/1915/fuera-de-lugar/4-scene.png",
+      "assets/cd/1915/fuera-de-lugar/5-scene.png",
+      "assets/cd/1915/fuera-de-lugar/6-scene.png",
+      "assets/cd/1915/fuera-de-lugar/7-scene.png",
+      "assets/cd/1915/fuera-de-lugar/8-scene.png"
+    ],
+    "size": "1/2",
+    "tipo": "CREATIVE"
+  },
+  {
     "id": "stevenage-challenge",
     "titulo": "STEVENAGE CHALLENGE",
     "cliente": "BURGUER KING",
@@ -122,6 +172,17 @@
     "tipo": "VIDEO"
   },
   {
+    "id": "jala-jala",
+    "titulo": "JALA JALA",
+    "cliente": "CATRIEL + PACO AMOROSO",
+    "imagen": "assets/projects/img/paco-catriel-jala-jala.jpg",
+    "imagenHover": "",
+    "descripcion": "Dirección creativa y producción completa del videoclip.",
+    "video": "https://player.vimeo.com/video/543728741",
+    "size": "1/24",
+    "tipo": "VIDEO"
+  },
+  {
     "id": "aves",
     "titulo": "AVES",
     "cliente": "DANTE SPINETTA",
@@ -133,17 +194,6 @@
     "tipo": "VIDEO"
   },
   {
-    "id": "jala-jala",
-    "titulo": "JALA JALA",
-    "cliente": "CATRIEL + PACO AMOROSO",
-    "imagen": "assets/projects/img/paco-catriel-jala-jala.jpg",
-    "imagenHover": "",
-    "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/543728741",
-    "size": "1/24",
-    "tipo": "VIDEO"
-  },
-    {
     "id": "carrito",
     "titulo": "CARRITO",
     "cliente": "BROKE CARREY",
@@ -165,7 +215,7 @@
     "size": "1/2",
     "tipo": "VIDEO"
   },
-    {
+  {
     "id": "cama-vacia",
     "titulo": "CAMA VACÍA",
     "cliente": "ECKO + CAZZU",
@@ -219,5 +269,26 @@
     "video": "https://player.vimeo.com/video/847094947",
     "size": "1/2",
     "tipo": "COMMERCIAL"
+  },
+  {
+    "id": "abrazame-k4",
+    "titulo": "ABRAZAME",
+    "cliente": "K4",
+    "imagen": "assets/cd/k4/abrazame/collage.png",
+    "imagenHover": "assets/projects/img/k4-abrazame.png",
+    "etg": {
+      "title": "FILM DIRECTION",
+      "artist": "K4",
+      "project": "ABRAZAME",
+      "year": "2023",
+      "label": "BOHEMIAN GROOVE"
+    },
+    "carouselAssets": [
+      "assets/cd/k4/abrazame/cover.png",
+      "assets/cd/k4/abrazame/collage.png",
+      "assets/projects/img/k4-abrazame.png"
+    ],
+    "size": "1/1",
+    "tipo": "CREATIVE"
   }
 ]

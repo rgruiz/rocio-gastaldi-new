@@ -27,9 +27,50 @@
     padding: 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     background: white;
     color: black;
+  }
+
+  .modal-info-block {
+    display: none;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  #modal-info-default {
+    display: flex;
+  }
+
+  #modal-info-default h2 {
+    white-space: pre-line;
+  }
+
+  .creative-info-panel h2 {
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+  }
+
+  .creative-info-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .creative-info-panel li {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .creative-info-panel li span {
+    display: inline-block;
+    min-width: 5rem;
+    font-weight: 600;
   }
 
   .modal-video {
@@ -39,10 +80,144 @@
     justify-content: center;
     background: black;
     min-height: 60vh;
+    position: relative;
+  }
+
+  .modal-creative-wrapper {
+    display: none;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: white;
+  }
+
+  .creative-carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .creative-track {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-inline: 8%;
+  }
+
+  .creative-track.vertical {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y proximity;
+    padding: 0 0 4rem 0;
+    scroll-padding-top: 1rem;
+  }
+
+  .creative-track::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .creative-track {
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .creative-slide {
+    flex: 0 0 clamp(74rem, 110vw, 78rem);
+    max-width: clamp(74rem, 110vw, 78rem);
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  .creative-slide.is-active {
+    cursor: grab;
+  }
+
+  .creative-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .creative-track:active .creative-slide.is-active {
+    cursor: grabbing;
+  }
+
+  .creative-track.vertical .creative-slide {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+  }
+
+  .creative-track.vertical .creative-slide img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 6px;
   }
 
   .modal.video-only .modal-info {
     display: none;
+  }
+
+  .modal.creative-mode {
+    background: white;
+    color: black;
+  }
+
+  .modal.creative-mode .modal-info {
+    background: white;
+    color: black;
+  }
+
+  .modal.creative-mode .modal-video {
+    background: white;
+    align-items: stretch;
+  }
+
+  .modal.creative-mode .modal-close {
+    color: black;
+  }
+
+  .modal.creative-mode #modal-info-default {
+    display: none;
+  }
+
+  .modal.creative-mode #modal-info-creative {
+    display: flex;
+  }
+
+  .modal.creative-mode #modal-video-wrapper {
+    display: none;
+  }
+
+  .modal.creative-mode #modal-creative-wrapper {
+    display: flex;
+  }
+
+  .modal.creative-mode .modal-nav button,
+  .modal.creative-mode .modal-nav .nav-label {
+    color: black;
   }
 
   /* Video-only mode: make the player truly fullscreen */
@@ -76,11 +251,35 @@
   }
   
   .modal-nav {
+    display: none;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 0;
+    padding: 2rem 0 0;
+    gap: 2.5rem;
+  }
+
+  .modal.creative-mode .modal-content {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-areas:
+      "info video"
+      "nav video";
+  }
+
+  .modal.creative-mode .modal-info {
+    grid-area: info;
+    width: 100%;
+  }
+
+  .modal.creative-mode .modal-video {
+    grid-area: video;
+    width: 100%;
+  }
+
+  .modal.creative-mode .modal-nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    gap: 3rem;
+    grid-area: nav;
   }
   
   .modal-nav button {
@@ -125,11 +324,17 @@
   @media (max-width: 1024px) {
 
     .modal-content {
+      display: flex;
       flex-direction: column;
       height: 100vh;
       overflow-y: auto;
     }
-  
+
+    .modal.creative-mode .modal-content {
+      display: flex;
+      flex-direction: column;
+    }
+
     .modal-info,
     .modal-video {
       width: 100%;
@@ -140,7 +345,42 @@
       height: auto;
       box-sizing: border-box;
     }
-  
+
+    .modal.creative-mode .modal-creative-wrapper {
+      padding: 2rem 1.25rem;
+    }
+
+    .creative-carousel {
+      justify-content: flex-start;
+    }
+
+    .creative-track:not(.vertical) {
+      gap: 0.75rem;
+      padding: 0 clamp(6%, 8vw, 14%) 3rem;
+      scroll-padding-inline: clamp(6%, 8vw, 14%);
+    }
+
+    .creative-track:not(.vertical) .creative-slide {
+      flex: 0 0 clamp(32rem, 82vw, 46rem);
+      max-width: clamp(32rem, 82vw, 46rem);
+    }
+
+    .creative-track:not(.vertical) .creative-slide img {
+      max-height: 85vh;
+      min-height: 65vh;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .creative-track.vertical {
+      gap: 0.75rem;
+      padding: 0 0 4rem 0;
+    }
+
+    .creative-track.vertical .creative-slide {
+      width: 100%;
+    }
+
     .modal-video {
       padding: 0 !important;
       display: flex;
@@ -176,19 +416,20 @@
       right: max(1rem, env(safe-area-inset-right));
     }
   
-    .modal-nav {
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 2rem;
+    .modal.creative-mode .modal-nav {
+      padding: 0.5rem 1rem;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
     }
   
-    .modal-nav button {
+    .modal.creative-mode .modal-nav button {
       font-size: 1.5rem;
       justify-content: center;
       text-align: center;
     }
   
-    .nav-label {
+    .modal.creative-mode .nav-label {
       font-size: 0.9rem;
       max-width: 80vw;
       text-align: center;
