@@ -34,7 +34,6 @@
   .main-nav .center-nav .filter-btn {
     font-family: 'ArchivoRegular', sans-serif !important;
     text-decoration: none;
-    font-size: 13pt;
     color: inherit;
     position: relative;
     padding-bottom: 0.3rem;
@@ -106,7 +105,6 @@
     .main-nav .center-nav {
       gap: 1rem;
       flex-wrap: wrap;
-      font-size: 0.65rem;
     }
     .main-nav .theme-toggle svg {
       width: 18px;
@@ -179,10 +177,6 @@ body.nav-white .theme-toggle button svg {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  .subnav .filter-btn {
-    font-size: 0.65rem;
-  }
 }
 
 @keyframes fadeSlideDown {
@@ -233,8 +227,8 @@ body.nav-white .theme-toggle button svg {
   }
   .main-nav-mobile .logo {
     pointer-events: auto;
-    font-size: 10pt;
     flex: 0 0 auto;
+    font-size: 8pt;
   }
   .main-nav-mobile .mobile-nav-right {
     display: flex;
@@ -256,7 +250,7 @@ body.nav-white .theme-toggle button svg {
     border-radius: 5px;
     color: inherit;
     transition: transform 0.2s ease;
-    font-size: 10pt;
+    font-size: 8pt;
   }
   .main-nav-mobile .theme-toggle svg {
     width: 18px;
@@ -271,7 +265,7 @@ body.nav-white .theme-toggle button svg {
     border-radius: 3px;
     transition: background-color 0.3s ease, color 0.3s ease;
     letter-spacing: 0.05em;
-    font-size: 10pt;
+    font-size: 8pt;
   }
   .main-nav-mobile .about-link:hover {
     background-color: currentColor;
@@ -292,13 +286,12 @@ body.nav-white .theme-toggle button svg {
     margin: 0;
     pointer-events: auto;
     flex-wrap: wrap;
-    font-size: 0.65rem;
     background: transparent;
   }
   .main-nav-mobile .center-nav .filter-btn {
     font-family: 'ArchivoRegular', sans-serif !important;
     text-decoration: none;
-    font-size: 0.65rem;
+    font-size: 8pt;
     color: inherit;
     position: relative;
     padding-bottom: 0.3rem;

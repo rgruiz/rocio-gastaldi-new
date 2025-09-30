@@ -1,10 +1,9 @@
 .about-section {
   position: relative;
-  min-height: 40vh;
+  min-height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
   overflow: hidden;
 }
 
@@ -16,12 +15,10 @@
 }
 
 .about-content h2 {
-  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .about-content p {
-  font-size: 1.2rem;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -37,7 +34,6 @@
   margin: 0 0.8rem;
   color: var(--color-primary);
   text-decoration: none;
-  font-size: 1.8rem;
   transition: transform 0.3s ease;
 }
 
@@ -59,21 +55,12 @@
   text-align: center;
   margin-top: 2rem;
   letter-spacing: 0.5px;
-  font-family: 'Commissioner', sans-serif;
 }
 
 @media (max-width: 768px) {
 
   .about-section {
     padding: 0rem 1rem;
-  }
-  .about-content p {
-    font-size: 10pt;
-  }
-
-  .about-content .copyright, 
-  .about-content span{
-    font-size: 10pt;
   }
 
 }

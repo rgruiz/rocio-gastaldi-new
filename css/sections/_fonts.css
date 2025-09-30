@@ -9,7 +9,7 @@
 body {
   font-family: 'ArchivoRegular', sans-serif;
   letter-spacing: 0.05em;
-  font-size: 13pt;
+  font-size: 10pt;
 }
 
 *,
@@ -17,5 +17,5 @@ body {
 *::after {
   font-family: 'ArchivoRegular', sans-serif !important;
   letter-spacing: 0.05em !important;
-  font-size: 13pt;
+  font-size: 10pt;
 }
