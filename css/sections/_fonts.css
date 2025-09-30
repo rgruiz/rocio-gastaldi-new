@@ -6,7 +6,15 @@
   font-display: swap;
 }
 
+html {
+  box-sizing: border-box;
+  width: 100%;
+}
+
 body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
   font-family: 'ArchivoRegular', sans-serif;
   letter-spacing: 0.05em;
   font-size: 10pt;
@@ -15,6 +23,7 @@ body {
 *,
 *::before,
 *::after {
+  box-sizing: inherit;
   font-family: 'ArchivoRegular', sans-serif !important;
   letter-spacing: 0.05em !important;
   font-size: 10pt;
