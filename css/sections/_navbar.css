@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2.5rem;
-    height: 3.5rem;
+    flex-wrap: wrap;
+    padding: 0.75rem 2.5rem;
+    min-height: 3.5rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -17,11 +18,12 @@
     pointer-events: auto;
     flex: 0 0 auto;
     padding-left: 0.8rem;
+    order: 0;
   }
   
   .main-nav .center-nav {
     display: flex;
-    flex: 1 1 auto;
+    flex: 0 0 100%;
     justify-content: center;
     align-items: center;
     gap: 11.2rem;
@@ -29,6 +31,7 @@
     padding: 0;
     margin: 0;
     pointer-events: auto;
+    order: 2;
   }
   
   .main-nav .center-nav .filter-btn {
@@ -72,6 +75,8 @@
     gap: 1.5rem;
     pointer-events: auto;
     flex: 0 0 auto;
+    order: 1;
+    margin-left: auto;
   }
   
   .about-link {
@@ -193,7 +198,7 @@ body.nav-white .theme-toggle button svg {
 @media (max-width: 1024px) {
 
   .main-nav {
-    padding: 0 1rem;
+    padding: 0.75rem 1rem;
   }
 
 }
