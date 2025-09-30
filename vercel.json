@@ -1,4 +1,0 @@
-{
-  "buildCommand": "bash -lc \"git lfs install --local && git lfs pull --exclude='' --include='' && git lfs checkout\"",
-  "outputDirectory": "."
-}
