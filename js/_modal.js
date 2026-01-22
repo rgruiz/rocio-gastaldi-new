@@ -79,7 +79,7 @@ function updateCreativeNav(index) {
   } else {
     prevButton.dataset.targetIndex = String(prevIndex);
     prevButton.disabled = false;
-    prevLabel.textContent = formatCreativeLabel(prevIndex);
+    prevLabel.textContent = 'PREVIOUS';
   }
 
   if (nextIndex === null) {
@@ -89,7 +89,7 @@ function updateCreativeNav(index) {
   } else {
     nextButton.dataset.targetIndex = String(nextIndex);
     nextButton.disabled = false;
-    nextLabel.textContent = formatCreativeLabel(nextIndex);
+    nextLabel.textContent = 'NEXT';
   }
 }
 

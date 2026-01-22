@@ -57,6 +57,17 @@
     "tipo": "CREATIVE"
   },
   {
+    "id": "disciplina",
+    "titulo": "DISCIPLINA",
+    "cliente": "LALI",
+    "imagen": "assets/projects/gif/lali-disciplina1.mp4",
+    "imagenHover": "assets/projects/gif/lali-disciplina2.mp4",
+    "descripcion": "Dirección creativa y producción completa del videoclip.",
+    "video": "https://player.vimeo.com/video/667538622",
+    "size": "1/4",
+    "tipo": "VIDEO"
+  }, 
+  {
     "id": "bby-katana",
     "titulo": "BBY KATANA",
     "cliente": "TAICHU",
@@ -247,18 +258,7 @@
     "video": "https://player.vimeo.com/video/572202529",
     "size": "1/2",
     "tipo": "COMMERCIAL"
-  },
-  {
-    "id": "disciplina",
-    "titulo": "DISCIPLINA",
-    "cliente": "LALI",
-    "imagen": "assets/projects/gif/lali-disciplina1.mp4",
-    "imagenHover": "assets/projects/gif/lali-disciplina2.mp4",
-    "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/667538622",
-    "size": "1/4",
-    "tipo": "VIDEO"
-  },  
+  }, 
   {
     "id": "son-otros-tiempos",
     "titulo": "SON OTROS TIEMPOS",
@@ -274,8 +274,8 @@
     "id": "abrazame-k4",
     "titulo": "ABRAZAME",
     "cliente": "K4",
-    "imagen": "assets/cd/k4/abrazame/collage.png",
-    "imagenHover": "assets/projects/img/k4-abrazame.png",
+    "imagen": "assets/cd/k4/abrazame/cover.png",
+    "imagenHover": "assets/cd/k4/abrazame/collage.png",
     "etg": {
       "title": "FILM DIRECTION",
       "artist": "K4",

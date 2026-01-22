@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-bottom: 2rem;
 }
 
 
@@ -21,6 +22,7 @@
 .about-content p {
   margin-bottom: 2rem;
   line-height: 1.6;
+  font-size: 8pt;
 }
 
 .contact-links a:hover {
@@ -55,6 +57,7 @@
   text-align: center;
   margin-top: 2rem;
   letter-spacing: 0.5px;
+  font-size: 8pt;
 }
 
 @media (max-width: 768px) {

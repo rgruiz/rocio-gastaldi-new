@@ -47,7 +47,7 @@
   }
 
   .creative-info-panel h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     letter-spacing: 0.08em;
   }
 
@@ -110,10 +110,12 @@
     height: 100%;
     overflow-x: auto;
     overflow-y: hidden;
+    gap: clamp(0.5rem, 1.25vw, 1.75rem);
+    padding: 0 clamp(2.5rem, 6vw, 5.5rem);
     scroll-snap-type: x proximity;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    scroll-padding-inline: 8%;
+    scroll-padding-inline: clamp(2.5rem, 6vw, 5.5rem);
   }
 
   .creative-track.vertical {
@@ -137,8 +139,8 @@
   }
 
   .creative-slide {
-    flex: 0 0 clamp(74rem, 110vw, 78rem);
-    max-width: clamp(74rem, 110vw, 78rem);
+    flex: 0 0 min(64rem, calc(100% - clamp(7rem, 15vw, 14rem)));
+    max-width: min(64rem, calc(100% - clamp(7rem, 15vw, 14rem)));
     display: flex;
     justify-content: center;
     scroll-snap-align: center;
@@ -261,7 +263,7 @@
 
   .modal.creative-mode .modal-content {
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 30% 70%;
     grid-template-areas:
       "info video"
       "nav video";

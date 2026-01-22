@@ -10,8 +10,8 @@ export function inicializarTooltips() {
 
     project.addEventListener("mouseenter", () => {
       tooltip.innerHTML = `
-        <div style="font-weight: bold; font-size: 1rem; color: white;">${title}</div>
-        <div style="font-size: 0.85rem; color: #ccc; margin-top: 0.2rem;">${client}</div>
+        <div style="font-weight: bold; color: white;">${title}</div>
+        <div style="color: #ccc; margin-top: 0.2rem;">${client}</div>
       `;
       tooltip.style.display = "block";
     });

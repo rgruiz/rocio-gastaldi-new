@@ -151,8 +151,8 @@
   
     .overlay-mobile h2 {
       margin: 0;
-      font-size: clamp(0.9rem, 4vw, 1.2rem);
       line-height: 1.2;
+      font-size: 8pt;
       white-space: normal;
       word-break: break-word;
       overflow-wrap: break-word;
@@ -160,7 +160,7 @@
   
     .overlay-mobile p {
       margin: 0.2rem 0 0;
-      font-size: clamp(0.7rem, 3vw, 1rem);
+      font-size: 8pt;
       opacity: 0.85;
       white-space: normal;
       word-break: break-word;
