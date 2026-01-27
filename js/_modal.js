@@ -8,6 +8,7 @@ let currentIndex = 0;
 let player;
 const creativeState = {
   assets: [],
+  lastLoadedImages: [],
   index: 0
 };
 
@@ -188,7 +189,84 @@ function destroyPlayerIfExists() {
   player = null;
 }
 
-function renderCreativeCarousel() {
+function preloadImages(srcs) {
+  const promises = srcs.map(src => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(null); // Resolve null on error to not block
+    });
+  });
+  return Promise.all(promises);
+}
+
+function getMajorityHeight(images) {
+  const validImages = images.filter(img => img && img.naturalHeight > 0);
+  if (!validImages.length) return null;
+
+  // Count occurrences of each height
+  const heightCounts = {};
+  validImages.forEach(img => {
+    const h = img.naturalHeight;
+    heightCounts[h] = (heightCounts[h] || 0) + 1;
+  });
+
+  // Find the height with the most occurrences
+  let maxCount = 0;
+  let majorityHeight = null;
+  for (const [h, count] of Object.entries(heightCounts)) {
+    if (count > maxCount) {
+      maxCount = count;
+      majorityHeight = Number(h);
+    }
+  }
+
+  return majorityHeight;
+}
+
+function updateCarouselHeight() {
+  const track = creativeElements.track;
+  if (!track) return;
+
+  // On mobile/vertical, reset height
+  if (isTrackVertical()) {
+    track.style.removeProperty('--creative-target-height');
+    return;
+  }
+
+  const images = creativeState.lastLoadedImages;
+  if (!images || !images.length) return;
+
+  const majorityHeight = getMajorityHeight(images);
+  if (!majorityHeight) {
+    track.style.removeProperty('--creative-target-height');
+    return;
+  }
+
+  // Calculate constraint: Max width should be ~85% of track width
+  let maxAspectRatio = 0;
+  images.forEach(img => {
+    if (img.naturalHeight > 0) {
+      const ar = img.naturalWidth / img.naturalHeight;
+      if (ar > maxAspectRatio) maxAspectRatio = ar;
+    }
+  });
+
+  if (maxAspectRatio === 0) {
+    track.style.setProperty('--creative-target-height', `${majorityHeight}px`);
+    return;
+  }
+
+  const trackWidth = track.clientWidth;
+  const safeWidth = trackWidth * 0.85; // Leave 15% for peek
+  const heightLimit = safeWidth / maxAspectRatio;
+
+  const finalHeight = Math.min(majorityHeight, heightLimit);
+  track.style.setProperty('--creative-target-height', `${finalHeight}px`);
+}
+
+function renderCreativeCarousel(preloadedImages = []) {
   const track = creativeElements.track;
   if (!track) return;
 
@@ -205,21 +283,17 @@ function renderCreativeCarousel() {
     img.loading = 'lazy';
 
     const recordAspect = () => {
-      proyectoAssetsDimensions[src] = {
-        width: img.naturalWidth,
-        height: img.naturalHeight
-      };
+      // Dimensions are recorded but we rely on preloaded data now for aspect
       img.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
     };
 
-    if (proyectoAssetsDimensions[src]) {
-      const { width, height } = proyectoAssetsDimensions[src];
-      img.style.aspectRatio = `${width} / ${height}`;
-    } else if (img.complete) {
+    if (img.complete && img.naturalHeight) {
       recordAspect();
     } else {
       img.addEventListener('load', recordAspect, { once: true });
     }
+
+
 
     slide.appendChild(img);
     track.appendChild(slide);
@@ -381,7 +455,23 @@ export function openModal(index) {
     creativeState.index = 0;
     applyTrackOrientation();
     creativeScrollTicking = false;
-    renderCreativeCarousel();
+
+    // Show loader
+    const track = creativeElements.track;
+    if (track) {
+      track.innerHTML = '<div class="loader-text">LOADING...</div>';
+      track.style.justifyContent = 'center'; // Center loader
+    }
+
+    preloadImages(creativeState.assets).then((images) => {
+      if (!track) return;
+      track.style.justifyContent = ''; // Reset
+
+      creativeState.lastLoadedImages = images;
+      updateCarouselHeight();
+
+      renderCreativeCarousel(images);
+    });
 
   } else if (isVideoType && proyecto.video) {
     const vimeoId = proyecto.video.split('/').pop();
@@ -478,6 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const handleResize = () => {
     const changed = applyTrackOrientation();
+    updateCarouselHeight();
     creativeScrollTicking = false;
     if (creativeState.assets.length) {
       scrollToCreativeSlide(creativeState.index, { smooth: !changed });

@@ -1,454 +1,467 @@
  .modal {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    height: 100dvh; /* mobile dynamic viewport */
-    background: black;
-    display: none;
-    flex-direction: row;
-    z-index: 9999;
-    color: white;
-  }
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   height: 100dvh;
+   /* mobile dynamic viewport */
+   background: black;
+   display: none;
+   flex-direction: row;
+   z-index: 9999;
+   color: white;
+ }
 
-  /* Lock background scroll when modal is open */
-  body.scroll-locked {
-    overflow: hidden !important;
-    overscroll-behavior: contain;
-  }
-  
-  .modal-content {
-    display: flex;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .modal-info {
-    width: 35%;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: white;
-    color: black;
-  }
+ /* Lock background scroll when modal is open */
+ body.scroll-locked {
+   overflow: hidden !important;
+   overscroll-behavior: contain;
+ }
 
-  .modal-info-block {
-    display: none;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
+ .modal-content {
+   display: flex;
+   width: 100%;
+   height: 100%;
+ }
 
-  #modal-info-default {
-    display: flex;
-  }
+ .modal-info {
+   width: 35%;
+   padding: 3rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   background: white;
+   color: black;
+ }
 
-  #modal-info-default h2 {
-    white-space: pre-line;
-  }
+ .modal-info-block {
+   display: none;
+   flex-direction: column;
+   gap: 1.25rem;
+ }
 
-  .creative-info-panel h2 {
-    font-size: 1.3rem;
-    letter-spacing: 0.08em;
-  }
+ #modal-info-default {
+   display: flex;
+ }
 
-  .creative-info-panel ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
+ #modal-info-default h2 {
+   white-space: pre-line;
+ }
 
-  .creative-info-panel li {
-    font-size: 0.95rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    line-height: 1.4;
-  }
+ .creative-info-panel h2 {
+   font-size: 1.3rem;
+   letter-spacing: 0.08em;
+ }
 
-  .creative-info-panel li span {
-    display: inline-block;
-    min-width: 5rem;
-    font-weight: 600;
-  }
+ .creative-info-panel ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 0.75rem;
+ }
 
-  .modal-video {
-    width: 65%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: black;
-    min-height: 60vh;
-    position: relative;
-  }
+ .creative-info-panel li {
+   font-size: 0.95rem;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   line-height: 1.4;
+   display: flex;
+   align-items: baseline;
+ }
 
-  .modal-creative-wrapper {
-    display: none;
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    background: white;
-  }
+ .creative-info-panel li span {
+   display: block;
+   width: 7rem;
+   flex-shrink: 0;
+   font-weight: 600;
+ }
 
-  .creative-carousel {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+ .modal-video {
+   width: 65%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: black;
+   min-height: 60vh;
+   position: relative;
+ }
 
-  .creative-track {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    flex: 1;
-    height: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: clamp(0.5rem, 1.25vw, 1.75rem);
-    padding: 0 clamp(2.5rem, 6vw, 5.5rem);
-    scroll-snap-type: x proximity;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scroll-padding-inline: clamp(2.5rem, 6vw, 5.5rem);
-  }
+ .modal-creative-wrapper {
+   display: none;
+   flex: 1;
+   height: 100%;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   box-sizing: border-box;
+   background: white;
+ }
 
-  .creative-track.vertical {
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 1rem;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scroll-snap-type: y proximity;
-    padding: 0 0 4rem 0;
-    scroll-padding-top: 1rem;
-  }
+ .creative-carousel {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
 
-  .creative-track::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
+ .creative-track {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   flex: 1;
+   height: 100%;
+   overflow-x: auto;
+   overflow-y: hidden;
+   gap: 5px;
+   padding: 0 clamp(2.5rem, 6vw, 5.5rem);
+   scroll-snap-type: x proximity;
+   scroll-behavior: smooth;
+   -webkit-overflow-scrolling: touch;
+   scroll-padding-inline: clamp(2.5rem, 6vw, 5.5rem);
+ }
 
-  .creative-track {
-    scrollbar-width: none; /* Firefox */
-  }
+ .creative-track.vertical {
+   flex-direction: column;
+   justify-content: flex-start;
+   gap: 1rem;
+   overflow-y: auto;
+   overflow-x: hidden;
+   scroll-snap-type: y proximity;
+   padding: 0 0 4rem 0;
+   scroll-padding-top: 1rem;
+ }
 
-  .creative-slide {
-    flex: 0 0 min(64rem, calc(100% - clamp(7rem, 15vw, 14rem)));
-    max-width: min(64rem, calc(100% - clamp(7rem, 15vw, 14rem)));
-    display: flex;
-    justify-content: center;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-  }
+ .creative-track::-webkit-scrollbar {
+   width: 0;
+   height: 0;
+ }
 
-  .creative-slide.is-active {
-    cursor: grab;
-  }
+ .creative-track {
+   scrollbar-width: none;
+   /* Firefox */
+ }
 
-  .creative-slide img {
-    width: 100%;
-    height: auto;
-    max-height: 85vh;
-    object-fit: cover;
-    border-radius: 4px;
-  }
+ .creative-slide {
+   flex: 0 0 auto;
+   max-width: none;
+   display: flex;
+   justify-content: center;
+   scroll-snap-align: center;
+   scroll-snap-stop: always;
+   margin: 0 1em;
+ }
 
-  .creative-track:active .creative-slide.is-active {
-    cursor: grabbing;
-  }
+ .creative-slide.is-active {
+   cursor: grab;
+ }
 
-  .creative-track.vertical .creative-slide {
-    flex: 0 0 auto;
-    max-width: 100%;
-    width: 100%;
-    scroll-snap-align: start;
-  }
+ .creative-slide img {
+   width: auto;
+   max-width: 100%;
+   height: var(--creative-target-height, auto);
+   max-height: 85vh;
+   object-fit: contain;
+   border-radius: 4px;
+ }
 
-  .creative-track.vertical .creative-slide img {
-    width: 100%;
-    height: auto;
-    max-height: none;
-    object-fit: contain;
-    border-radius: 6px;
-  }
+ .creative-track:active .creative-slide.is-active {
+   cursor: grabbing;
+ }
 
-  .modal.video-only .modal-info {
-    display: none;
-  }
+ .creative-track.vertical .creative-slide {
+   flex: 0 0 auto;
+   max-width: 100%;
+   width: 100%;
+   scroll-snap-align: start;
+ }
 
-  .modal.creative-mode {
-    background: white;
-    color: black;
-  }
+ .creative-track.vertical .creative-slide img {
+   width: 100%;
+   height: auto;
+   max-height: none;
+   object-fit: contain;
+   border-radius: 6px;
+ }
 
-  .modal.creative-mode .modal-info {
-    background: white;
-    color: black;
-  }
+ .modal.video-only .modal-info {
+   display: none;
+ }
 
-  .modal.creative-mode .modal-video {
-    background: white;
-    align-items: stretch;
-  }
+ .modal.creative-mode {
+   background: white;
+   color: black;
+ }
 
-  .modal.creative-mode .modal-close {
-    color: black;
-  }
+ .modal.creative-mode .modal-info {
+   background: white;
+   color: black;
+ }
 
-  .modal.creative-mode #modal-info-default {
-    display: none;
-  }
+ .modal.creative-mode .modal-video {
+   background: white;
+   align-items: stretch;
+ }
 
-  .modal.creative-mode #modal-info-creative {
-    display: flex;
-  }
+ .modal.creative-mode .modal-close {
+   color: black;
+ }
 
-  .modal.creative-mode #modal-video-wrapper {
-    display: none;
-  }
+ .modal.creative-mode #modal-info-default {
+   display: none;
+ }
 
-  .modal.creative-mode #modal-creative-wrapper {
-    display: flex;
-  }
+ .modal.creative-mode #modal-info-creative {
+   display: flex;
+ }
 
-  .modal.creative-mode .modal-nav button,
-  .modal.creative-mode .modal-nav .nav-label {
-    color: black;
-  }
+ .modal.creative-mode #modal-video-wrapper {
+   display: none;
+ }
 
-  /* Video-only mode: make the player truly fullscreen */
-  .modal.video-only .modal-content {
-    width: 100vw;
-    height: 100vh;
-    height: 100dvh; /* mobile address bar safe */
-    overflow: hidden;
-  }
+ .modal.creative-mode #modal-creative-wrapper {
+   display: flex;
+ }
 
-  .modal.video-only .modal-video {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    background: black;
-  }
-  
-  .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .modal-nav {
-    display: none;
-    justify-content: flex-start;
-    align-items: flex-end;
-    margin-top: 0;
-    padding: 2rem 0 0;
-    gap: 2.5rem;
-  }
+ .modal.creative-mode .modal-nav button,
+ .modal.creative-mode .modal-nav .nav-label {
+   color: black;
+ }
 
-  .modal.creative-mode .modal-content {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-areas:
-      "info video"
-      "nav video";
-  }
+ /* Video-only mode: make the player truly fullscreen */
+ .modal.video-only .modal-content {
+   width: 100vw;
+   height: 100vh;
+   height: 100dvh;
+   /* mobile address bar safe */
+   overflow: hidden;
+ }
 
-  .modal.creative-mode .modal-info {
-    grid-area: info;
-    width: 100%;
-  }
+ .modal.video-only .modal-video {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   display: grid;
+   place-items: center;
+   overflow: hidden;
+   background: black;
+ }
 
-  .modal.creative-mode .modal-video {
-    grid-area: video;
-    width: 100%;
-  }
+ .modal-close {
+   position: absolute;
+   top: 1rem;
+   right: 2rem;
+   font-size: 2rem;
+   background: none;
+   border: none;
+   color: white;
+   cursor: pointer;
+ }
 
-  .modal.creative-mode .modal-nav {
-    display: flex;
-    grid-area: nav;
-  }
-  
-  .modal-nav button {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: inherit;
-    cursor: pointer;
-    position: relative;
-    text-align: left;
-  }
-  
-  .nav-label {
-    font-size: 0.85rem;
-    line-height: 1.2;
-    color: #000;
-    max-width: 10rem;
-    text-align: left;
-    white-space: normal;
-    word-break: break-word;
-  }
+ .modal-nav {
+   display: none;
+   justify-content: flex-start;
+   align-items: flex-end;
+   margin-top: 0;
+   padding: 2rem 0 0;
+   gap: 2.5rem;
+ }
 
-  /* Portrait-only fixes: ensure true viewport height and centering on mobile */
-  @media (orientation: portrait) {
-    .modal.video-only,
-    .modal.video-only .modal-content,
-    .modal.video-only .modal-video {
-      height: 100svh !important;
-      min-height: 100svh !important;
-    }
+ .modal.creative-mode .modal-content {
+   display: grid;
+   grid-template-columns: 30% 70%;
+   grid-template-areas:
+     "info video"
+     "nav video";
+ }
 
-    .modal.video-only .modal-video {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-  }
+ .modal.creative-mode .modal-info {
+   grid-area: info;
+   width: 100%;
+ }
 
-  @media (max-width: 1024px) {
+ .modal.creative-mode .modal-video {
+   grid-area: video;
+   width: 100%;
+ }
 
-    .modal-content {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      overflow-y: auto;
-    }
+ .modal.creative-mode .modal-nav {
+   display: flex;
+   grid-area: nav;
+ }
 
-    .modal.creative-mode .modal-content {
-      display: flex;
-      flex-direction: column;
-    }
+ .modal-nav button {
+   display: flex;
+   align-items: center;
+   gap: 0.6rem;
+   font-size: 2rem;
+   background: none;
+   border: none;
+   color: inherit;
+   cursor: pointer;
+   position: relative;
+   text-align: left;
+ }
 
-    .modal-info,
-    .modal-video {
-      width: 100%;
-    }
-  
-    .modal-info {
-      padding: 1.5rem;
-      height: auto;
-      box-sizing: border-box;
-    }
+ .nav-label {
+   font-size: 0.85rem;
+   line-height: 1.2;
+   color: #000;
+   max-width: 10rem;
+   text-align: left;
+   white-space: normal;
+   word-break: break-word;
+ }
 
-    .modal.creative-mode .modal-creative-wrapper {
-      padding: 2rem 1.25rem;
-    }
+ /* Portrait-only fixes: ensure true viewport height and centering on mobile */
+ @media (orientation: portrait) {
 
-    .creative-carousel {
-      justify-content: flex-start;
-    }
+   .modal.video-only,
+   .modal.video-only .modal-content,
+   .modal.video-only .modal-video {
+     height: 100svh !important;
+     min-height: 100svh !important;
+   }
 
-    .creative-track:not(.vertical) {
-      gap: 0.75rem;
-      padding: 0 clamp(6%, 8vw, 14%) 3rem;
-      scroll-padding-inline: clamp(6%, 8vw, 14%);
-    }
+   .modal.video-only .modal-video {
+     display: flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+   }
+ }
 
-    .creative-track:not(.vertical) .creative-slide {
-      flex: 0 0 clamp(32rem, 82vw, 46rem);
-      max-width: clamp(32rem, 82vw, 46rem);
-    }
+ @media (max-width: 1024px) {
 
-    .creative-track:not(.vertical) .creative-slide img {
-      max-height: 85vh;
-      min-height: 65vh;
-      object-fit: cover;
-      border-radius: 6px;
-    }
+   .modal-content {
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+     overflow-y: auto;
+   }
 
-    .creative-track.vertical {
-      gap: 0.75rem;
-      padding: 0 0 4rem 0;
-    }
+   .modal.creative-mode .modal-content {
+     display: flex;
+     flex-direction: column;
+   }
 
-    .creative-track.vertical .creative-slide {
-      width: 100%;
-    }
+   .modal-info,
+   .modal-video {
+     width: 100%;
+   }
 
-    .modal-video {
-      padding: 0 !important;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-  
-    .modal-close {
-      top: 1rem;
-      right: 1rem;
-      font-size: 1.8rem;
-      padding-top: 2.5rem;
-    }
+   .modal-info {
+     padding: 1.5rem;
+     height: auto;
+     box-sizing: border-box;
+   }
 
-    /* Video-only: keep real fullscreen and prevent scroll on mobile */
-    .modal.video-only .modal-content {
-      flex-direction: row;
-      width: 100vw;
-      height: 100vh;
-      height: 100dvh; /* prefer dynamic viewport on mobile */
-      overflow: hidden !important;
-    }
+   .modal.creative-mode .modal-creative-wrapper {
+     padding: 2rem 1.25rem;
+   }
 
-    .modal.video-only .modal-video {
-      width: 100% !important;
-      height: 100% !important;
-      min-height: 100dvh;
-    }
+   .creative-carousel {
+     justify-content: flex-start;
+   }
 
-    .modal.video-only .modal-close {
-      top: max(1rem, env(safe-area-inset-top));
-      right: max(1rem, env(safe-area-inset-right));
-    }
-  
-    .modal.creative-mode .modal-nav {
-      padding: 0.5rem 1rem;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .modal.creative-mode .modal-nav button {
-      font-size: 1.5rem;
-      justify-content: center;
-      text-align: center;
-    }
-  
-    .modal.creative-mode .nav-label {
-      font-size: 0.9rem;
-      max-width: 80vw;
-      text-align: center;
-    }
+   .creative-track:not(.vertical) {
+     gap: 0.5rem;
+     padding: 0 clamp(6%, 8vw, 14%) 3rem;
+     scroll-padding-inline: clamp(6%, 8vw, 14%);
+   }
 
-     .modal-info h2 {
-      font-size: 1.3rem;
-      line-height: 1.4;
-    }
-    
-    .modal-info p {
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-    
-    .nav-label {
-      font-size: 0.8rem;
-    }
+   .creative-track:not(.vertical) .creative-slide {
+     flex: 0 0 auto;
+     max-width: none;
+   }
 
-  }
+   .creative-track:not(.vertical) .creative-slide img {
+     max-height: 85vh;
+     height: var(--creative-target-height, auto);
+     /* removed min-height to avoid stretching */
+     object-fit: contain;
+     border-radius: 6px;
+   }
+
+   .creative-track.vertical {
+     gap: 0.75rem;
+     padding: 0 0 4rem 0;
+   }
+
+   .creative-track.vertical .creative-slide {
+     width: 100%;
+   }
+
+   .modal-video {
+     padding: 0 !important;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+   }
+
+   .modal-close {
+     top: 1rem;
+     right: 1rem;
+     font-size: 1.8rem;
+     padding-top: 2.5rem;
+   }
+
+   /* Video-only: keep real fullscreen and prevent scroll on mobile */
+   .modal.video-only .modal-content {
+     flex-direction: row;
+     width: 100vw;
+     height: 100vh;
+     height: 100dvh;
+     /* prefer dynamic viewport on mobile */
+     overflow: hidden !important;
+   }
+
+   .modal.video-only .modal-video {
+     width: 100% !important;
+     height: 100% !important;
+     min-height: 100dvh;
+   }
+
+   .modal.video-only .modal-close {
+     top: max(1rem, env(safe-area-inset-top));
+     right: max(1rem, env(safe-area-inset-right));
+   }
+
+   .modal.creative-mode .modal-nav {
+     padding: 0.5rem 1rem;
+     width: 100%;
+     justify-content: center;
+     align-items: center;
+   }
+
+   .modal.creative-mode .modal-nav button {
+     font-size: 1.5rem;
+     justify-content: center;
+     text-align: center;
+   }
+
+   .modal.creative-mode .nav-label {
+     font-size: 0.9rem;
+     max-width: 80vw;
+     text-align: center;
+   }
+
+   .modal-info h2 {
+     font-size: 1.3rem;
+     line-height: 1.4;
+   }
+
+   .modal-info p {
+     font-size: 0.95rem;
+     line-height: 1.4;
+   }
+
+   .nav-label {
+     font-size: 0.8rem;
+   }
+
+ }

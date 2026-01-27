@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ROCIO GASTALDI | FILM AND CREATIVE DIRECTOR FROM BUENOS AIRES, ARGENTINA</title>
-  <meta name="description" content="Portfolio oficial de Rocío Gastaldi. Videos comerciales, videoclips y proyectos personales. Directora y productora audiovisual.">
+  <meta name="description"
+    content="Portfolio oficial de Rocío Gastaldi. Videos comerciales, videoclips y proyectos personales. Directora y productora audiovisual.">
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://cdn.plyr.io">
   <link rel="preload" href="data/proyectos.json" as="fetch" crossorigin>
@@ -23,7 +25,7 @@
           });
         });
       })
-      .catch(() => {});
+      .catch(() => { });
   </script>
   <script defer src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
@@ -35,113 +37,115 @@
   <meta property="og:url" content="https://rociogastaldi.com/">
   <meta name="twitter:card" content="summary_large_image">
 </head>
-<body>
-<div id="loading-screen"></div>
-<nav class="main-nav">
-  <div class="logo">ROCIO GASTALDI</div>
-  <ul id="filter-nav" class="center-nav">
-    <li><a href="#" class="filter-btn active" data-filter="all">ALL</a></li>
-    <li><a href="#" class="filter-btn" data-filter="VIDEO">MUSIC VIDEO</a></li>
-    <li><a href="#" class="filter-btn" data-filter="COMMERCIAL">COMMERCIAL</a></li>
-    <li><a href="#" class="filter-btn" data-filter="CREATIVE">CREATIVE DIRECTION</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="theme-toggle">
-      <button id="theme-cycle-btn">B / W</button>
-    </div>
-    <a href="#about" class="about-link">ABOUT</a>
-  </div>
-</nav>
 
-<!-- Nuevo navbar exclusivo para mobile -->
-<nav class="main-nav-mobile">
-  <div class="mobile-top-row">
+<body>
+  <div id="loading-screen"></div>
+  <nav class="main-nav">
     <div class="logo">ROCIO GASTALDI</div>
-    <div class="mobile-nav-right">
+    <ul id="filter-nav" class="center-nav">
+      <li><a href="#" class="filter-btn active" data-filter="all">ALL</a></li>
+      <li><a href="#" class="filter-btn" data-filter="VIDEO">MUSIC VIDEO</a></li>
+      <li><a href="#" class="filter-btn" data-filter="COMMERCIAL">COMMERCIAL</a></li>
+      <li><a href="#" class="filter-btn" data-filter="CREATIVE">CREATIVE DIRECTION</a></li>
+    </ul>
+    <div class="nav-right">
       <div class="theme-toggle">
-        <button id="theme-cycle-btn-mobile">B / W</button>
+        <button id="theme-cycle-btn">B / W</button>
       </div>
       <a href="#about" class="about-link">ABOUT</a>
     </div>
-  </div>
-  <ul id="filter-nav-mobile" class="center-nav">
-    <li><a href="#" class="filter-btn active" data-filter="all">ALL</a></li>
-    <li><a href="#" class="filter-btn" data-filter="VIDEO">MUSIC VIDEO</a></li>
-    <li><a href="#" class="filter-btn" data-filter="COMMERCIAL">COMMERCIAL</a></li>
-    <li><a href="#" class="filter-btn" data-filter="CREATIVE">CREATIVE DIRECTION</a></li>
-  </ul>
-</nav>
-<h1 style="display:none;">ROCIO GASTALDI PORTFOLIO - FILM AND CREATIVE DIRECTOR FROM BUENOS AIRES, ARGENTINA</h1>
-<div class="projects-grid" id="projects-container"></div>
+  </nav>
 
-<div id="project-modal" class="modal">
-  <div class="modal-content">
-    <div class="modal-info">
-      <div class="modal-info-block" id="modal-info-default">
-        <h2 id="modal-title"></h2>
-        <p id="modal-description"></p>
-      </div>
-      <div class="modal-info-block creative-info-panel" id="modal-info-creative">
-        <h2 id="creative-title"></h2>
-        <ul id="creative-meta"></ul>
+  <!-- Nuevo navbar exclusivo para mobile -->
+  <nav class="main-nav-mobile">
+    <div class="mobile-top-row">
+      <div class="logo">ROCIO GASTALDI</div>
+      <div class="mobile-nav-right">
+        <div class="theme-toggle">
+          <button id="theme-cycle-btn-mobile">B / W</button>
+        </div>
+        <a href="#about" class="about-link">ABOUT</a>
       </div>
     </div>
-    <div class="modal-video">
-      <div id="modal-video-wrapper">
-        <div id="modal-video" data-plyr-provider="vimeo" data-plyr-embed-id=""></div>
-      </div>
-      <div id="modal-creative-wrapper" class="modal-creative-wrapper">
-        <div class="creative-carousel">
-          <div class="creative-track" id="creative-track" aria-live="polite"></div>
+    <ul id="filter-nav-mobile" class="center-nav">
+      <li><a href="#" class="filter-btn active" data-filter="all">ALL</a></li>
+      <li><a href="#" class="filter-btn" data-filter="VIDEO">MUSIC VIDEO</a></li>
+      <li><a href="#" class="filter-btn" data-filter="COMMERCIAL">COMMERCIAL</a></li>
+      <li><a href="#" class="filter-btn" data-filter="CREATIVE">CREATIVE DIRECTION</a></li>
+    </ul>
+  </nav>
+  <h1 style="display:none;">ROCIO GASTALDI PORTFOLIO - FILM AND CREATIVE DIRECTOR FROM BUENOS AIRES, ARGENTINA</h1>
+  <div class="projects-grid" id="projects-container"></div>
+
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-info">
+        <div class="modal-info-block" id="modal-info-default">
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>
+        </div>
+        <div class="modal-info-block creative-info-panel" id="modal-info-creative">
+          <h2 id="creative-title"></h2>
+          <ul id="creative-meta"></ul>
         </div>
       </div>
+      <div class="modal-video">
+        <div id="modal-video-wrapper">
+          <div id="modal-video" data-plyr-provider="vimeo" data-plyr-embed-id=""></div>
+        </div>
+        <div id="modal-creative-wrapper" class="modal-creative-wrapper">
+          <div class="creative-carousel">
+            <div class="creative-track" id="creative-track" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-nav">
+        <button id="prev-project">
+          <i data-feather="chevron-left"></i>
+          <span class="nav-label" id="prev-label"></span>
+        </button>
+        <button id="next-project">
+          <span class="nav-label" id="next-label"></span>
+          <i data-feather="chevron-right"></i>
+        </button>
+      </div>
+      <button class="modal-close" onclick="closeModal()">×</button>
     </div>
-    <div class="modal-nav">
-      <button id="prev-project">
-        <i data-feather="chevron-left"></i>
-        <span class="nav-label" id="prev-label"></span>
-      </button>
-      <button id="next-project">
-        <span class="nav-label" id="next-label"></span>
-        <i data-feather="chevron-right"></i>
-      </button>
-    </div>
-    <button class="modal-close" onclick="closeModal()">×</button>
   </div>
-</div>
-<footer id="footer" class="footer">
-  <section id="about" class="about-section">
-    <div class="about-content">
-      <p>FILM AND CREATIVE DIRECTOR FROM BUENOS AIRES, ARGENTINA</p>
-      <div class="contact-links">
+  <footer id="footer" class="footer">
+    <section id="about" class="about-section">
+      <div class="about-content">
+        <p>FILM AND CREATIVE DIRECTOR FROM BUENOS AIRES, ARGENTINA</p>
         <div class="contact-links">
-          <a href="https://vimeo.com/rociogastaldi" target="_blank" title="Vimeo">
-            <p>VIMEO</p>
-          </a>
-          <i> - </i>
-          <a href="https://www.instagram.com/rociogastaldi" target="_blank" title="Instagram">
-            <p>@ROCIOGASTALDI</p>
-          </a>
-          <i> - </i>
-          <a href="mailto:rociogastaldi2@gmail.com" title="Email">
-            <p>MAIL</p>
-          </a>
+          <div class="contact-links">
+            <a href="https://vimeo.com/rociogastaldi" target="_blank" title="Vimeo">
+              <p>VIMEO</p>
+            </a>
+            <i> - </i>
+            <a href="https://www.instagram.com/rociogastaldi" target="_blank" title="Instagram">
+              <p>@ROCIOGASTALDI</p>
+            </a>
+            <i> - </i>
+            <a href="mailto:rociogastaldi2@gmail.com" title="Email">
+              <p>MAIL</p>
+            </a>
+          </div>
+        </div>
+        <div class="copyright">
+          © <span id="year"></span> ROCIO GASTALDI. All rights reserved.
         </div>
       </div>
-      <div class="copyright">
-        © <span id="year"></span> ROCIO GASTALDI. All rights reserved.
-      </div>
-    </div>
-  </section>
-</footer>
-<div id="project-tooltip" class="tooltip"></div>
-<script defer src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<script type="module" src="./js/script.js"></script>
-<button id="back-to-top" title="Back to top">
-  <i data-feather="chevron-up"></i>
-</button>
+    </section>
+  </footer>
+  <div id="cursor-follower" class="cursor-follower"></div>
+  <script defer src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script type="module" src="./js/script.js"></script>
+  <button id="back-to-top" title="Back to top">
+    <i data-feather="chevron-up"></i>
+  </button>
 </body>
+
 </html>

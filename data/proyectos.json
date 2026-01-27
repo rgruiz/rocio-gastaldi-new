@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": "pelirroja",
     "titulo": "LA PELIRROJA",
     "cliente": "SEBASTIAN YATRA",
@@ -66,7 +66,7 @@
     "video": "https://player.vimeo.com/video/667538622",
     "size": "1/4",
     "tipo": "VIDEO"
-  }, 
+  },
   {
     "id": "bby-katana",
     "titulo": "BBY KATANA",
@@ -78,7 +78,6 @@
     "size": "1/2",
     "tipo": "VIDEO"
   },
-
   {
     "id": "smirnoff-nathy",
     "titulo": "SMIRNOFF x NATHY PELUSO",
@@ -148,14 +147,13 @@
       "label": "SONY MUSIC"
     },
     "carouselAssets": [
-      "assets/cd/1915/fuera-de-lugar/1-artwork.jpg",
-      "assets/cd/1915/fuera-de-lugar/2-scene.png",
-      "assets/cd/1915/fuera-de-lugar/3-scene.png",
-      "assets/cd/1915/fuera-de-lugar/4-scene.png",
-      "assets/cd/1915/fuera-de-lugar/5-scene.png",
-      "assets/cd/1915/fuera-de-lugar/6-scene.png",
-      "assets/cd/1915/fuera-de-lugar/7-scene.png",
-      "assets/cd/1915/fuera-de-lugar/8-scene.png"
+      "assets/cd/1915/fuera-de-lugar/PORTADA FDL 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 1 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 2 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 3 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 4 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 5 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 6 876px.png"
     ],
     "size": "1/2",
     "tipo": "CREATIVE"
@@ -258,7 +256,7 @@
     "video": "https://player.vimeo.com/video/572202529",
     "size": "1/2",
     "tipo": "COMMERCIAL"
-  }, 
+  },
   {
     "id": "son-otros-tiempos",
     "titulo": "SON OTROS TIEMPOS",

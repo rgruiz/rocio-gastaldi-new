@@ -1,0 +1,81 @@
+/* _cursor.css */
+.cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1),
+        width 0.2s cubic-bezier(0.19, 1, 0.22, 1),
+        height 0.2s cubic-bezier(0.19, 1, 0.22, 1),
+        border-radius 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: inherit;
+    color: #000;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cursor-follower.active {
+    transform: translate(-50%, -50%) scale(1);
+    width: auto;
+    /* Let width fit content */
+    height: auto;
+    /* Let height fit content */
+    min-width: 20px;
+    min-height: 20px;
+    background-color: transparent;
+    /* Remove background container */
+    color: #fff;
+    /* White text to difference against background */
+    border-radius: 0;
+}
+
+/* Only show on devices that support hover */
+@media (hover: none) {
+    .cursor-follower {
+        display: none !important;
+    }
+}
+
+.cursor-text-title {
+    font-size: 3rem;
+    /* Much bigger */
+    font-weight: 900;
+    /* Extra Bold */
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.cursor-text-client {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    display: block;
+    /* Ensure it stacks */
+}
+
+.cursor-follower.active .cursor-text-title,
+.cursor-follower.active .cursor-text-client {
+    opacity: 1;
+    /* Since background is transparent, we rely on the mix-blend-mode of the parent 
+     applying to the white text pixels. */
+}

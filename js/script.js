@@ -1,7 +1,7 @@
 import './_loadProjects.js'
 import './_modal.js';
 import './_theme.js';
-import { inicializarTooltips } from './_tooltip.js';
+import { initCursor } from './_cursor.js';
 import './_animations.js';
 import { inicializarFiltros } from './_filters.js';
 import './_plyr-init.js';
@@ -32,8 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // Iniciar tooltips cuando desaparezca la pantalla de carga
-  document.addEventListener('loadingScreenHidden', inicializarTooltips, { once: true });
+  // Iniciar cursor personalizado cuando desaparezca la pantalla de carga
+  document.addEventListener('loadingScreenHidden', initCursor, { once: true });
+
+
 
   // Cargar proyectos y exponer funciones globales
   cargarProyectos((data) => {
