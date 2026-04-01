@@ -16,7 +16,8 @@ const creativeElements = {
   wrapper: null,
   title: null,
   meta: null,
-  track: null
+  track: null,
+  dots: null
 };
 
 let creativeScrollTicking = false;
@@ -299,6 +300,20 @@ function renderCreativeCarousel(preloadedImages = []) {
     track.appendChild(slide);
   });
 
+  const dotsContainer = creativeElements.dots;
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    creativeState.assets.forEach((_, idx) => {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot';
+      dot.dataset.index = String(idx);
+      dot.addEventListener('click', () => {
+        scrollToCreativeSlide(idx);
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
   if (!creativeState.assets.length) {
     track.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     return;
@@ -314,6 +329,13 @@ function updateActiveCreativeSlide() {
   [...track.children].forEach((slide, idx) => {
     slide.classList.toggle('is-active', idx === creativeState.index);
   });
+
+  const dotsContainer = creativeElements.dots;
+  if (dotsContainer) {
+    [...dotsContainer.children].forEach((dot, idx) => {
+      dot.classList.toggle('is-active', idx === creativeState.index);
+    });
+  }
 }
 
 function scrollToCreativeSlide(targetIndex, { smooth = true } = {}) {
@@ -555,6 +577,7 @@ document.addEventListener("DOMContentLoaded", () => {
   creativeElements.title = document.getElementById('creative-title');
   creativeElements.meta = document.getElementById('creative-meta');
   creativeElements.track = document.getElementById('creative-track');
+  creativeElements.dots = document.getElementById('carousel-dots');
 
   prevButton = document.getElementById("prev-project");
   nextButton = document.getElementById("next-project");

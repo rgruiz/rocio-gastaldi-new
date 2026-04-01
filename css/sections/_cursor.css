@@ -27,7 +27,7 @@
 }
 
 .cursor-follower.active {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(calc(-50% - 2px), calc(-100% - 2px)) scale(1);
     width: auto;
     /* Let width fit content */
     height: auto;
@@ -49,7 +49,7 @@
 }
 
 .cursor-text-title {
-    font-size: 3rem;
+    font-size: 2rem;
     /* Much bigger */
     font-weight: 900;
     /* Extra Bold */
