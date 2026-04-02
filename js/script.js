@@ -6,7 +6,7 @@ import './_animations.js';
 import { inicializarFiltros } from './_filters.js';
 import './_plyr-init.js';
 import { initLazyMedia } from './_lazyload.js';
-import { initLoadingScreen, monitorFirstProjects } from './_loadingScreen.js';
+import { initLoadingScreen, monitorFirstProjects, shouldSkipLoadingScreen, hideLoadingScreen } from './_loadingScreen.js';
 
 import { observarProyectos, resetAnimationIndex } from './_animations.js';
 import { cargarProyectos } from './_loadProjects.js';
@@ -46,7 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     resetAnimationIndex();
     observarProyectos();
     initLazyMedia();
-    monitorFirstProjects(5);
+    const firstFive = data.slice(0, 5);
+    if (shouldSkipLoadingScreen(firstFive)) {
+      hideLoadingScreen();
+    } else {
+      monitorFirstProjects(5);
+    }
   });
 });
 

@@ -32,6 +32,29 @@ export function hideLoadingScreen() {
   }
 }
 
+export function resourcesLoadedFromCache(urls) {
+  const entries = performance.getEntriesByType('resource');
+  return urls.every(u => {
+    try {
+      const abs = new URL(u, location.href).href;
+      const entry = entries.find(e => e.name === abs);
+      return entry && entry.transferSize === 0;
+    } catch {
+      return false;
+    }
+  });
+}
+
+export function shouldSkipLoadingScreen(projects) {
+  const urls = [];
+  projects.forEach(p => {
+    if (p.imagen) urls.push(p.imagen);
+    if (p.imagenHover) urls.push(p.imagenHover);
+  });
+  if (urls.length === 0) return false;
+  return resourcesLoadedFromCache(urls);
+}
+
 export function monitorFirstProjects(count) {
   const projects = document.querySelectorAll('.project');
   const targets = Array.from(projects).slice(0, count);
