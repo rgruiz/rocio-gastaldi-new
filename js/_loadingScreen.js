@@ -2,6 +2,12 @@ export function initLoadingScreen() {
   const loader = document.getElementById('loading-screen');
   if (!loader) return;
 
+  // Skip the loader if we've loaded the site before
+  if (localStorage.getItem('skipLoadingScreen') === '1') {
+    hideLoadingScreen();
+    return;
+  }
+
   const textEl = document.createElement('div');
   textEl.className = 'loader-text';
   loader.appendChild(textEl);
@@ -30,6 +36,8 @@ export function hideLoadingScreen() {
   } else {
     document.dispatchEvent(new Event('loadingScreenHidden'));
   }
+  // Mark that we've shown the loader once
+  localStorage.setItem('skipLoadingScreen', '1');
 }
 
 export function monitorFirstProjects(count) {
