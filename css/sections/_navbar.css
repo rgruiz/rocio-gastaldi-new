@@ -35,7 +35,7 @@
   }
   
   .main-nav .center-nav .filter-btn {
-    font-family: 'ArchivoRegular', sans-serif !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     text-decoration: none;
     color: inherit;
     position: relative;
@@ -294,7 +294,7 @@ body.nav-white .theme-toggle button svg {
     background: transparent;
   }
   .main-nav-mobile .center-nav .filter-btn {
-    font-family: 'ArchivoRegular', sans-serif !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     text-decoration: none;
     font-size: 8pt;
     color: inherit;

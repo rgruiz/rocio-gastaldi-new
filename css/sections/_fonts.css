@@ -1,8 +1,155 @@
+/* Helvetica Neue Font Faces */
+
+/* UltraLight (100) */
 @font-face {
-  font-family: 'ArchivoRegular';
-  src: url('../../fonts/Archivo-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueUltraLight.otf') format('opentype');
+  font-weight: 100;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueUltraLightItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Thin (200) */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueThin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueThinItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Light (300) */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueLightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Regular / Roman (400) */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueRoman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Medium (500) */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueMediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* SemiBold (600) */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueBoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Heavy (800) */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueHeavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueHeavyItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Black (900) */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../../fonts/helvetica/HelveticaNeueBlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -15,7 +162,7 @@ body {
   margin: 0;
   width: 100%;
   overflow-x: hidden;
-  font-family: 'ArchivoRegular', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: 0.05em;
   font-size: 10pt;
 }
@@ -24,7 +171,7 @@ body {
 *::before,
 *::after {
   box-sizing: inherit;
-  font-family: 'ArchivoRegular', sans-serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   letter-spacing: 0.05em !important;
   font-size: 10pt;
 }
