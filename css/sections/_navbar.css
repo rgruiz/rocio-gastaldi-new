@@ -1,249 +1,75 @@
 .main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0.75rem 2.5rem;
-    min-height: 3.5rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: transparent;
-    pointer-events: none;
-    color: #000;
-  }
-  
-  .main-nav .logo {
-    pointer-events: auto;
-    flex: 0 0 auto;
-    padding-left: 0.8rem;
-    order: 0;
-  }
-  
-  .main-nav .center-nav {
-    display: flex;
-    flex: 0 0 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 11.2rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    pointer-events: auto;
-    order: 2;
-  }
-  
-  .main-nav .center-nav .filter-btn {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    padding-bottom: 0.3rem;
-    transition: color 0.3s ease;
-  }
-  
-  .main-nav .center-nav .filter-btn.active {
-    border-bottom: 2px solid #000;
-  }
-  
-  .main-nav .center-nav .filter-btn:hover {
-    color: currentColor;
-    opacity: 0.6;
-  }
-  
-  .main-nav .center-nav .filter-btn::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-  
-  .main-nav .center-nav .filter-btn.active::after {
-    transform: scaleX(1);
-  }
-  
-  .main-nav .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    pointer-events: auto;
-    flex: 0 0 auto;
-    order: 1;
-    margin-left: auto;
-  }
-  
-  .about-link {
-    text-decoration: none;
-    color: currentColor;
-    border: none; /* eliminamos el borde */
-    padding: 0.3rem 0.8rem;
-    border-radius: 3px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    letter-spacing: 0.05em;
-  }
-  
-  .about-link:hover {
-    background-color: currentColor;
-    background: none;
-    opacity: 0.6;
-  }
-
-  .about-link.active {
-    opacity: 1;
-    border-bottom: 2px solid currentColor;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .main-nav {
-      flex-direction: column;
-      height: auto;
-      padding: 0 1rem;
-    }
-    .main-nav .center-nav {
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .about-link {
-      padding: 0.2rem 0.2rem;
-    }
-  }
-
-
-@media (max-width: 768px) {
-  .subnav ul {
-    gap: 1rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2.5rem;
+  min-height: 3.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: transparent;
+  pointer-events: none;
+  color: #000;
 }
 
-@keyframes fadeSlideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.main-nav .logo {
+  pointer-events: auto;
+  flex: 0 0 auto;
+  padding-left: 0.8rem;
 }
 
+.main-nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  pointer-events: auto;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.about-link {
+  text-decoration: none;
+  color: currentColor;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.about-link:hover {
+  background-color: currentColor;
+  background: none;
+  opacity: 0.6;
+}
+
+.about-link.active {
+  opacity: 1;
+  border-bottom: 2px solid currentColor;
+}
+
+/* Responsive Breakpoints */
 @media (max-width: 1024px) {
-
   .main-nav {
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1.5rem;
   }
-
-}
-
-/* Ocultar navbar mobile en desktop, mostrar solo en mobile */
-.main-nav-mobile {
-  display: none;
 }
 
 @media (max-width: 768px) {
   .main-nav {
-    display: none;
+    padding: 0.5rem 1rem;
+    min-height: auto;
   }
-  .main-nav-mobile {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0.5rem;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: transparent;
-    pointer-events: none;
-    padding: 0 1rem;
-  }
-  .main-nav-mobile .mobile-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    pointer-events: auto;
-  }
-  .main-nav-mobile .logo {
-    pointer-events: auto;
-    flex: 0 0 auto;
+
+  .main-nav .logo {
+    padding-left: 0;
     font-size: 8pt;
   }
-  .main-nav-mobile .mobile-nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    pointer-events: auto;
-    flex: 0 0 auto;
-  }
-  .main-nav-mobile .about-link {
-    text-decoration: none;
-    color: currentColor;
-    border: none;
-    padding: 0.2rem 0.2rem;
-    border-radius: 3px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    letter-spacing: 0.05em;
+
+  .about-link {
+    padding: 0.2rem;
     font-size: 8pt;
-  }
-  .main-nav-mobile .about-link:hover {
-    background-color: currentColor;
-    background: none;
-    opacity: 0.6;
-  }
-  .main-nav-mobile .about-link.active {
-    opacity: 1;
-    border-bottom: 2px solid currentColor;
-  }
-  .main-nav-mobile .center-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    list-style: none;
-    padding: 0.5rem 0 0.5rem 0;
-    margin: 0;
-    pointer-events: auto;
-    flex-wrap: wrap;
-    background: transparent;
-  }
-  .main-nav-mobile .center-nav .filter-btn {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-    text-decoration: none;
-    font-size: 8pt;
-    color: inherit;
-    position: relative;
-    padding-bottom: 0.3rem;
-    transition: color 0.3s ease;
-  }
-  .main-nav-mobile .center-nav .filter-btn.active {
-    border-bottom: 2px solid #000;
-  }
-  .main-nav-mobile .center-nav .filter-btn:hover {
-    color: currentColor;
-    opacity: 0.6;
-  }
-  .main-nav-mobile .center-nav .filter-btn::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-  .main-nav-mobile .center-nav .filter-btn.active::after {
-    transform: scaleX(1);
   }
 }
