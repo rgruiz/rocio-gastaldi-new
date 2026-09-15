@@ -1,6 +1,5 @@
 import './_loadProjects.js'
 import './_modal.js';
-import './_theme.js';
 import { initCursor } from './_cursor.js';
 import './_animations.js';
 import { inicializarFiltros } from './_filters.js';

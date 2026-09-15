@@ -11,24 +11,11 @@
   align-items: center;
   cursor: pointer;
   z-index: 999;
-  background-color: var(--color-secondary);
+  background-color: black;
   color: white;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, background-color 0.3s ease;
-}
-
-body.bg-white #back-to-top {
-  background-color: black; /* secondary */
-  color: white;
-}
-body.bg-gray #back-to-top {
-  background-color: #554d44; /* tertiary */
-  color: white;
-}
-body.bg-black #back-to-top {
-  background-color: white; /* primary */
-  color: black;
+  transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
 }
 
 #back-to-top.visible {

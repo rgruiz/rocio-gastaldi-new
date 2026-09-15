@@ -12,6 +12,7 @@
     z-index: 9999;
     background: transparent;
     pointer-events: none;
+    color: #000;
   }
   
   .main-nav .logo {
@@ -44,7 +45,7 @@
   }
   
   .main-nav .center-nav .filter-btn.active {
-    border-bottom: 2px solid var(--color-secondary);
+    border-bottom: 2px solid #000;
   }
   
   .main-nav .center-nav .filter-btn:hover {
@@ -111,69 +112,10 @@
       gap: 1rem;
       flex-wrap: wrap;
     }
-    .main-nav .theme-toggle svg {
-      width: 18px;
-      height: 18px;
-    }
-    .main-nav .theme-toggle button {
-      padding: 0.2rem;
-    }
     .about-link {
       padding: 0.2rem 0.2rem;
     }
   }
-  
-  .main-nav .theme-toggle {
-    display: flex;
-    gap: 0.8rem;
-    pointer-events: auto;
-  }
-  
-  .main-nav .theme-toggle button {
-    background: none;
-    border: none;
-    padding: 0.4rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.2s ease;
-    color: inherit;
-  }
-  
-  .main-nav .theme-toggle svg {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
-  }
-
-  body.bg-white .main-nav .logo {
-    color: #111;
-  }
-  
-  body.bg-gray .main-nav .logo {
-    color: #222;
-  }
-  
-  body.bg-black .main-nav .logo {
-    color: #eee;
-  }
-
-body.nav-white .main-nav,
-body.nav-white .main-nav-mobile {
-  color: white;
-}
-
-body.nav-white .main-nav .logo {
-  color: white;
-}
-
-body.nav-white .main-nav-mobile .logo {
-  color: white;
-}
-
-body.nav-white .theme-toggle button svg {
-  color: white;
-  stroke: white;
-}
 
 
 @media (max-width: 768px) {
@@ -242,26 +184,6 @@ body.nav-white .theme-toggle button svg {
     pointer-events: auto;
     flex: 0 0 auto;
   }
-  .main-nav-mobile .theme-toggle {
-    display: flex;
-    gap: 0.8rem;
-    pointer-events: auto;
-  }
-  .main-nav-mobile .theme-toggle button {
-    background: none;
-    border: none;
-    padding: 0.2rem;
-    cursor: pointer;
-    border-radius: 5px;
-    color: inherit;
-    transition: transform 0.2s ease;
-    font-size: 8pt;
-  }
-  .main-nav-mobile .theme-toggle svg {
-    width: 18px;
-    height: 18px;
-    stroke: currentColor;
-  }
   .main-nav-mobile .about-link {
     text-decoration: none;
     color: currentColor;
@@ -303,7 +225,7 @@ body.nav-white .theme-toggle button svg {
     transition: color 0.3s ease;
   }
   .main-nav-mobile .center-nav .filter-btn.active {
-    border-bottom: 2px solid var(--color-secondary);
+    border-bottom: 2px solid #000;
   }
   .main-nav-mobile .center-nav .filter-btn:hover {
     color: currentColor;
