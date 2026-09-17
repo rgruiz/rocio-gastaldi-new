@@ -7,6 +7,12 @@
   <title>ROCIO GASTALDI | FILM AND CREATIVE DIRECTOR FROM BUENOS AIRES, ARGENTINA</title>
   <meta name="description"
     content="Portfolio oficial de Rocío Gastaldi. Videos comerciales, videoclips y proyectos personales. Directora y productora audiovisual.">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://cdn.plyr.io">
   <link rel="preload" href="data/proyectos.json" as="fetch" crossorigin>
@@ -29,7 +35,7 @@
   </script>
   <script defer src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
   <meta property="og:title" content="ROCIO GASTALDI">
   <meta property="og:description" content="Directora audiovisual. Comerciales, videoclips y proyectos personales.">
@@ -41,9 +47,15 @@
 <body>
   <div id="loading-screen"></div>
   <nav class="main-nav">
-    <div class="logo">ROCIO GASTALDI</div>
+    <div class="logo">
+      <a href="#" aria-label="Rocio Gastaldi">
+        <img src="assets/nav/ROCIOGASTALDI logo.png" alt="Rocio Gastaldi" class="nav-img nav-logo-img">
+      </a>
+    </div>
     <div class="nav-right">
-      <a href="#about" class="about-link">ABOUT</a>
+      <a href="#about" class="about-link" aria-label="About / Contact">
+        <img src="assets/nav/ABOUT _ CONTACT.png" alt="About / Contact" class="nav-img nav-about-img">
+      </a>
     </div>
   </nav>
   <h1 style="display:none;">ROCIO GASTALDI PORTFOLIO - FILM AND CREATIVE DIRECTOR FROM BUENOS AIRES, ARGENTINA</h1>

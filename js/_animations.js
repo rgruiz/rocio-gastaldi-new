@@ -19,18 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const projects = document.querySelectorAll(".project");
   projects.forEach(project => observer.observe(project));
-
-  //footer
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function (e) {
-        const targetId = this.getAttribute("href").substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          targetElement.scrollIntoView({ behavior: "smooth" });
-        }
-      });
-    });
 });
 
 // Al final de _animations.js
