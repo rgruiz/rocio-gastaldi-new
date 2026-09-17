@@ -112,13 +112,13 @@
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .main-nav {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2.5rem;
   }
 
   .main-nav .logo,
   .main-nav .nav-right {
-    width: 180px;
-    max-width: 32vw;
+    width: 200px;
+    max-width: 30vw;
   }
 }
 
