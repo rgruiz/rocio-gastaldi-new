@@ -7,6 +7,11 @@ export async function cargarProyectos(callback) {
   callback(data);
 }
 
+function toCapitalCase(text) {
+  if (!text) return "";
+  return text.toLowerCase().replace(/(^|[\s+\-/])(\p{L})/gu, (_, sep, char) => sep + char.toUpperCase());
+}
+
 async function loadProjects() {
 const container = document.getElementById("projects-container");
 const response = await fetch("./data/proyectos.json");
@@ -36,7 +41,7 @@ container.innerHTML = proyectos.map((proyecto, index) => {
         </div>
         <div class="overlay-mobile pre-animate">
         <h2>${proyecto.titulo}</h2>
-        ${proyecto.cliente ? `<p>${proyecto.cliente}</p>` : ""}
+        ${proyecto.cliente ? `<p>${toCapitalCase(proyecto.cliente)}</p>` : ""}
         </div>
     </a>
     `;

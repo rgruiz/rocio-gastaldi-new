@@ -108,37 +108,36 @@
   z-index: 1;
 }
 
+.overlay-mobile h2 {
+  font-family: 'Helvetica Neue', 'Helvetica Neue Light', Helvetica, Arial, sans-serif !important;
+  font-weight: 300 !important;
+  font-size: clamp(8.5pt, 2.5vw, 10.5pt) !important;
+  text-transform: uppercase;
+  letter-spacing: -0.05em !important;
+  line-height: 1.1;
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.overlay-mobile p {
+  font-family: 'Helvetica Neue', 'Helvetica Neue Light', Helvetica, Arial, sans-serif !important;
+  font-weight: 300 !important;
+  font-size: clamp(7pt, 2vw, 8.5pt) !important;
+  text-transform: capitalize;
+  letter-spacing: -0.05em !important;
+  line-height: 1.1;
+  margin: 0.2rem 0 0;
+  opacity: 0.9;
+  white-space: normal;
+  word-break: break-word;
+}
+
 /* Solo visible en mobile */
 @media (max-width: 1024px) {
   .overlay-mobile {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 0.5rem 0.8rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
-    color: white;
     display: block;
-    box-sizing: border-box;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .overlay-mobile h2 {
-    margin: 0;
-    line-height: 1.2;
-    font-size: 8pt;
-    white-space: normal;
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .overlay-mobile p {
-    margin: 0.2rem 0 0;
-    font-size: 8pt;
-    opacity: 0.85;
-    white-space: normal;
-    word-break: break-word;
   }
 
   /* También ocultamos el cursor-tooltip en mobile */
