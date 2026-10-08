@@ -1,5 +1,15 @@
 [
   {
+    "id": "cocodrilo",
+    "titulo": "COCODRILO",
+    "cliente": "Dillom",
+    "imagen": "assets/projects/portadas/desktop/PORTADA COCODRILO - DILLOM.png",
+    "imagenHover": "",
+    "descripcion": "Dirección creativa y producción completa del videoclip.",
+    "video": "https://player.vimeo.com/video/1219582147",
+    "tipo": "VIDEO"
+  },
+  {
     "id": "pelirroja",
     "titulo": "LA PELIRROJA",
     "cliente": "SEBASTIAN YATRA",
@@ -20,49 +30,6 @@
     "tipo": "VIDEO"
   },
   {
-    "id": "piel",
-    "titulo": "PIEL",
-    "cliente": "TIAGO PZK + KE PERSONAJES",
-    "imagen": "assets/projects/img/piel-tiago.jpg",
-    "imagenHover": "",
-    "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/909096170",
-    "tipo": "VIDEO"
-  },
-  {
-    "id": "entre-tanta-gente",
-    "titulo": "ENTRE TANTA GENTE",
-    "cliente": "SEBASTIAN YATRA",
-    "imagen": "assets/cd/yatra/entre-tanta-gente/stage-2.jpg",
-    "imagenHover": "assets/cd/yatra/entre-tanta-gente/stage-1.jpg",
-    "etg": {
-      "title": "SHOW DIRECTION",
-      "artist": "SEBASTIAN YATRA",
-      "project": "ENTRE TANTA GENTE summer tour",
-      "year": "2025",
-      "label": "UNIVERSAL"
-    },
-    "carouselAssets": [
-      "assets/cd/yatra/entre-tanta-gente/intro.jpg",
-      "assets/cd/yatra/entre-tanta-gente/text-1.png",
-      "assets/cd/yatra/entre-tanta-gente/stage-3.jpg",
-      "assets/cd/yatra/entre-tanta-gente/stage-2.jpg",
-      "assets/cd/yatra/entre-tanta-gente/text-2.png",
-      "assets/cd/yatra/entre-tanta-gente/stage-1.jpg"
-    ],
-    "tipo": "CREATIVE"
-  },
-  {
-    "id": "disciplina",
-    "titulo": "DISCIPLINA",
-    "cliente": "LALI",
-    "imagen": "assets/projects/gif/lali-disciplina1.mp4",
-    "imagenHover": "assets/projects/gif/lali-disciplina2.mp4",
-    "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/667538622",
-    "tipo": "VIDEO"
-  },
-  {
     "id": "bby-katana",
     "titulo": "BBY KATANA",
     "cliente": "TAICHU",
@@ -73,24 +40,14 @@
     "tipo": "VIDEO"
   },
   {
-    "id": "smirnoff-nathy",
-    "titulo": "SMIRNOFF x NATHY PELUSO",
-    "cliente": "SMIRNOFF",
-    "imagen": "assets/projects/img/SMIRNOFF.png",
-    "imagenHover": "",
+    "id": "disciplina",
+    "titulo": "DISCIPLINA",
+    "cliente": "LALI",
+    "imagen": "assets/projects/gif/lali-disciplina1.mp4",
+    "imagenHover": "assets/projects/gif/lali-disciplina2.mp4",
     "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/904770451",
-    "tipo": "COMMERCIAL"
-  },
-  {
-    "id": "leogacy",
-    "titulo": "LEOGACY",
-    "cliente": "GATORADE",
-    "imagen": "assets/projects/img/leogacy.png",
-    "imagenHover": "",
-    "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/784576809",
-    "tipo": "COMMERCIAL"
+    "video": "https://player.vimeo.com/video/667538622",
+    "tipo": "VIDEO"
   },
   {
     "id": "maldito-mio",
@@ -123,38 +80,14 @@
     "tipo": "VIDEO"
   },
   {
-    "id": "1915-fuera-de-lugar",
-    "titulo": "FUERA DE LUGAR",
-    "cliente": "1915",
-    "imagen": "assets/cd/1915/fuera-de-lugar/9-video.mp4",
-    "imagenHover": "assets/projects/img/fuera-de-lugar.jpg",
-    "etg": {
-      "title": "FILM DIRECTION",
-      "artist": "1915",
-      "project": "FUERA DE LUGAR (ALBUM)",
-      "year": "2022",
-      "label": "SONY MUSIC"
-    },
-    "carouselAssets": [
-      "assets/cd/1915/fuera-de-lugar/PORTADA FDL 876px.png",
-      "assets/cd/1915/fuera-de-lugar/FDL 1 876px.png",
-      "assets/cd/1915/fuera-de-lugar/FDL 2 876px.png",
-      "assets/cd/1915/fuera-de-lugar/FDL 3 876px.png",
-      "assets/cd/1915/fuera-de-lugar/FDL 4 876px.png",
-      "assets/cd/1915/fuera-de-lugar/FDL 5 876px.png",
-      "assets/cd/1915/fuera-de-lugar/FDL 6 876px.png"
-    ],
-    "tipo": "CREATIVE"
-  },
-  {
-    "id": "stevenage-challenge",
-    "titulo": "STEVENAGE CHALLENGE",
-    "cliente": "BURGUER KING",
-    "imagen": "assets/projects/gif/burguer-king-1.mp4",
-    "imagenHover": "assets/projects/gif/burguer-king-2.mp4",
+    "id": "piel",
+    "titulo": "PIEL",
+    "cliente": "TIAGO PZK + KE PERSONAJES",
+    "imagen": "assets/projects/img/piel-tiago.jpg",
+    "imagenHover": "",
     "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/543732039",
-    "tipo": "COMMERCIAL"
+    "video": "https://player.vimeo.com/video/909096170",
+    "tipo": "VIDEO"
   },
   {
     "id": "yo-soy-la-disco",
@@ -167,16 +100,6 @@
     "tipo": "VIDEO"
   },
   {
-    "id": "jala-jala",
-    "titulo": "JALA JALA",
-    "cliente": "CATRIEL + PACO AMOROSO",
-    "imagen": "assets/projects/img/paco-catriel-jala-jala.jpg",
-    "imagenHover": "",
-    "descripcion": "Dirección creativa y producción completa del videoclip.",
-    "video": "https://player.vimeo.com/video/543728741",
-    "tipo": "VIDEO"
-  },
-  {
     "id": "aves",
     "titulo": "AVES",
     "cliente": "DANTE SPINETTA",
@@ -184,6 +107,16 @@
     "imagenHover": "assets/projects/gif/dante-2.mp4",
     "descripcion": "Dirección creativa y producción completa del videoclip.",
     "video": "https://player.vimeo.com/video/543737657",
+    "tipo": "VIDEO"
+  },
+  {
+    "id": "jala-jala",
+    "titulo": "JALA JALA",
+    "cliente": "CATRIEL + PACO AMOROSO",
+    "imagen": "assets/projects/img/paco-catriel-jala-jala.jpg",
+    "imagenHover": "",
+    "descripcion": "Dirección creativa y producción completa del videoclip.",
+    "video": "https://player.vimeo.com/video/543728741",
     "tipo": "VIDEO"
   },
   {
@@ -225,6 +158,83 @@
     "descripcion": "Dirección creativa y producción completa del videoclip.",
     "video": "https://player.vimeo.com/video/660332842",
     "tipo": "VIDEO"
+  },
+  {
+    "id": "entre-tanta-gente",
+    "titulo": "ENTRE TANTA GENTE",
+    "cliente": "SEBASTIAN YATRA",
+    "imagen": "assets/cd/yatra/entre-tanta-gente/stage-2.jpg",
+    "imagenHover": "assets/cd/yatra/entre-tanta-gente/stage-1.jpg",
+    "etg": {
+      "title": "SHOW DIRECTION",
+      "artist": "SEBASTIAN YATRA",
+      "project": "ENTRE TANTA GENTE summer tour",
+      "year": "2025",
+      "label": "UNIVERSAL"
+    },
+    "carouselAssets": [
+      "assets/cd/yatra/entre-tanta-gente/intro.jpg",
+      "assets/cd/yatra/entre-tanta-gente/text-1.png",
+      "assets/cd/yatra/entre-tanta-gente/stage-3.jpg",
+      "assets/cd/yatra/entre-tanta-gente/stage-2.jpg",
+      "assets/cd/yatra/entre-tanta-gente/text-2.png",
+      "assets/cd/yatra/entre-tanta-gente/stage-1.jpg"
+    ],
+    "tipo": "CREATIVE"
+  },
+  {
+    "id": "smirnoff-nathy",
+    "titulo": "SMIRNOFF x NATHY PELUSO",
+    "cliente": "SMIRNOFF",
+    "imagen": "assets/projects/img/SMIRNOFF.png",
+    "imagenHover": "",
+    "descripcion": "Dirección creativa y producción completa del videoclip.",
+    "video": "https://player.vimeo.com/video/904770451",
+    "tipo": "COMMERCIAL"
+  },
+  {
+    "id": "leogacy",
+    "titulo": "LEOGACY",
+    "cliente": "GATORADE",
+    "imagen": "assets/projects/img/leogacy.png",
+    "imagenHover": "",
+    "descripcion": "Dirección creativa y producción completa del videoclip.",
+    "video": "https://player.vimeo.com/video/784576809",
+    "tipo": "COMMERCIAL"
+  },
+  {
+    "id": "1915-fuera-de-lugar",
+    "titulo": "FUERA DE LUGAR",
+    "cliente": "1915",
+    "imagen": "assets/cd/1915/fuera-de-lugar/9-video.mp4",
+    "imagenHover": "assets/projects/img/fuera-de-lugar.jpg",
+    "etg": {
+      "title": "FILM DIRECTION",
+      "artist": "1915",
+      "project": "FUERA DE LUGAR (ALBUM)",
+      "year": "2022",
+      "label": "SONY MUSIC"
+    },
+    "carouselAssets": [
+      "assets/cd/1915/fuera-de-lugar/PORTADA FDL 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 1 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 2 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 3 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 4 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 5 876px.png",
+      "assets/cd/1915/fuera-de-lugar/FDL 6 876px.png"
+    ],
+    "tipo": "CREATIVE"
+  },
+  {
+    "id": "stevenage-challenge",
+    "titulo": "STEVENAGE CHALLENGE",
+    "cliente": "BURGUER KING",
+    "imagen": "assets/projects/gif/burguer-king-1.mp4",
+    "imagenHover": "assets/projects/gif/burguer-king-2.mp4",
+    "descripcion": "Dirección creativa y producción completa del videoclip.",
+    "video": "https://player.vimeo.com/video/543732039",
+    "tipo": "COMMERCIAL"
   },
   {
     "id": "fresh-sparks",
