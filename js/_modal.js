@@ -32,6 +32,30 @@ function isCreative(proyecto) {
   return proyecto?.tipo === 'CREATIVE';
 }
 
+function isModalEligible(proyecto) {
+  return Boolean(proyecto && proyecto.tipo?.toUpperCase() !== 'DECORATIVE');
+}
+
+function findNextModalIndex(fromIndex) {
+  if (!proyectos.length) return null;
+  let idx = fromIndex;
+  do {
+    idx = (idx + 1) % proyectos.length;
+    if (isModalEligible(proyectos[idx])) return idx;
+  } while (idx !== fromIndex);
+  return null;
+}
+
+function findPrevModalIndex(fromIndex) {
+  if (!proyectos.length) return null;
+  let idx = fromIndex;
+  do {
+    idx = (idx - 1 + proyectos.length) % proyectos.length;
+    if (isModalEligible(proyectos[idx])) return idx;
+  } while (idx !== fromIndex);
+  return null;
+}
+
 function findNextCreativeIndex(fromIndex) {
   if (!proyectos.length) return null;
   let idx = fromIndex;
@@ -419,10 +443,11 @@ function handleCreativeScroll() {
 }
 
 export function openModal(index) {
-  currentIndex = index;
   const proyecto = proyectos[index];
-  const prevIndex = (index - 1 + proyectos.length) % proyectos.length;
-  const nextIndex = (index + 1) % proyectos.length;
+  if (!isModalEligible(proyecto)) return;
+  currentIndex = index;
+  const prevIndex = findPrevModalIndex(index);
+  const nextIndex = findNextModalIndex(index);
   const modal = document.getElementById("project-modal");
   const wrapper = document.getElementById("modal-video-wrapper");
   const infoDefault = document.getElementById('modal-info-default');
@@ -532,8 +557,8 @@ export function openModal(index) {
     }, 50);
   }
 
-  const prevProyecto = proyectos[prevIndex];
-  const nextProyecto = proyectos[nextIndex];
+  const prevProyecto = prevIndex !== null ? proyectos[prevIndex] : null;
+  const nextProyecto = nextIndex !== null ? proyectos[nextIndex] : null;
 
   const titleLines = [proyecto.titulo, proyecto.cliente].filter(Boolean).join('\n');
   document.getElementById("modal-title").innerText = titleLines;
@@ -543,8 +568,20 @@ export function openModal(index) {
     updateCreativeNav(index);
   } else {
     clearCreativeNav();
-    if (prevLabel) prevLabel.textContent = `${prevProyecto.titulo}${prevProyecto.cliente ? ' · ' + prevProyecto.cliente : ''}`;
-    if (nextLabel) nextLabel.textContent = `${nextProyecto.titulo}${nextProyecto.cliente ? ' · ' + nextProyecto.cliente : ''}`;
+    if (prevIndex !== null && prevButton) {
+      prevButton.dataset.targetIndex = String(prevIndex);
+      prevButton.disabled = false;
+      if (prevLabel && prevProyecto) {
+        prevLabel.textContent = `${prevProyecto.titulo}${prevProyecto.cliente ? ' · ' + prevProyecto.cliente : ''}`;
+      }
+    }
+    if (nextIndex !== null && nextButton) {
+      nextButton.dataset.targetIndex = String(nextIndex);
+      nextButton.disabled = false;
+      if (nextLabel && nextProyecto) {
+        nextLabel.textContent = `${nextProyecto.titulo}${nextProyecto.cliente ? ' · ' + nextProyecto.cliente : ''}`;
+      }
+    }
   }
 
   if (isVideoType) {

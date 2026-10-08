@@ -40,8 +40,10 @@ export function initCursor() {
         const projects = document.querySelectorAll(".project");
 
         projects.forEach(project => {
+            if (project.classList.contains("project-decorative")) return;
             const title = project.getAttribute("data-title") || "";
             const client = project.getAttribute("data-client") || "";
+            if (!title && !client) return;
 
             project.addEventListener("mouseenter", () => {
                 cursor.innerHTML = `
@@ -69,7 +71,7 @@ export function initCursor() {
     if (container) {
         container.addEventListener("mouseover", (e) => {
             const project = e.target.closest(".project");
-            if (project) {
+            if (project && !project.classList.contains("project-decorative") && (project.getAttribute("data-title") || project.getAttribute("data-client"))) {
                 const title = project.getAttribute("data-title") || "";
                 const client = project.getAttribute("data-client") || "";
 

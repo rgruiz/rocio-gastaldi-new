@@ -10,6 +10,12 @@
     "tipo": "VIDEO"
   },
   {
+    "id": "decorative-01",
+    "imagen": "assets/projects/portadas/desktop/CHITA 2-no-link.png",
+    "imagenHover": "assets/projects/portadas/desktop/CHITA cover-no-link.png",
+    "tipo": "DECORATIVE"
+  },
+  {
     "id": "pelirroja",
     "titulo": "LA PELIRROJA",
     "cliente": "SEBASTIAN YATRA",
@@ -80,6 +86,12 @@
     "tipo": "VIDEO"
   },
   {
+    "id": "decorative-02",
+    "imagen": "assets/projects/portadas/desktop/BABY KATANA-no-link.png",
+    "imagenHover": "assets/projects/portadas/desktop/ABRAZAME-no-link.png",
+    "tipo": "DECORATIVE"
+  },
+  {
     "id": "piel",
     "titulo": "PIEL",
     "cliente": "TIAGO PZK + KE PERSONAJES",
@@ -148,6 +160,12 @@
     "descripcion": "Dirección creativa y producción completa del videoclip.",
     "video": "https://player.vimeo.com/video/543730072",
     "tipo": "VIDEO"
+  },
+  {
+    "id": "decorative-03",
+    "imagen": "assets/projects/portadas/mobile/LA PELIRROJA.png",
+    "imagenHover": "",
+    "tipo": "DECORATIVE"
   },
   {
     "id": "bien-chula",

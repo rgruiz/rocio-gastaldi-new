@@ -48,6 +48,10 @@
   grid-column: span 1;
 }
 
+.project.project-decorative {
+  cursor: default;
+}
+
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
