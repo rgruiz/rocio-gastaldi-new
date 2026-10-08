@@ -1,8 +1,6 @@
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-flow: dense;
-  /* ❤️ clave para rellenar huecos */
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 3rem;
   box-sizing: border-box;
@@ -11,9 +9,7 @@
 
 .project {
   aspect-ratio: 4/3;
-  height: 30vw;
-  /* ✅ Altura fija para todos los proyectos */
-  width: -webkit-fill-available;
+  width: 100%;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -48,37 +44,17 @@
   animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Tamaños basados en columnas del grid */
-.project-1-1 {
-  grid-column: span 4;
-}
-
-.project-1-2 {
-  grid-column: span 2;
-}
-
-.project-1-4 {
+/* Todos los proyectos tienen el mismo tamaño (1 columna) */
+.project {
   grid-column: span 1;
 }
 
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columnas en tablets */
+    /* 2 columnas en mobile / tablet */
     padding: 2.5rem;
     margin-top: 5.5rem;
-  }
-
-  .project-1-1 {
-    grid-column: span 2;
-  }
-
-  .project-1-2 {
-    grid-column: span 2;
-  }
-
-  .project-1-4 {
-    grid-column: span 1;
   }
 }
 
@@ -93,22 +69,6 @@
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
     /* 2 columnas en móviles */
-  }
-
-  .project-1-1,
-  .project-1-2 {
-    grid-column: span 2;
-    /* Ocupar el ancho completo */
-  }
-
-  .project-1-4 {
-    grid-column: span 1;
-    /* Mitad del ancho */
-  }
-
-  .project {
-    height: 50vw;
-    /* Más alta en pantallas chicas */
   }
 }
 
@@ -199,7 +159,9 @@
 }
 
 .project .media-wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }

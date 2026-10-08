@@ -28,7 +28,7 @@ container.innerHTML = proyectos.map((proyecto, index) => {
     }
 
     return `
-    <a href="#" class="project project-${proyecto.size.replace('/', '-')}" onclick="openModal(${index})"
+    <a href="#" class="project" onclick="openModal(${index})"
         data-title="${proyecto.titulo}" data-client="${proyecto.cliente}" data-tipo="${proyecto.tipo}">
         <div class="media-wrapper">
         ${media}
