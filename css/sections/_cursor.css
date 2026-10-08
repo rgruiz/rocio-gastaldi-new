@@ -49,13 +49,12 @@
 }
 
 .cursor-text-title {
-    font-size: 2rem;
-    /* Much bigger */
-    font-weight: 900;
-    /* Extra Bold */
+    font-family: 'Helvetica Neue', 'Helvetica Neue Light', Helvetica, Arial, sans-serif !important;
+    font-size: 30pt !important;
+    font-weight: 300 !important;
     text-transform: uppercase;
-    line-height: 0.9;
-    letter-spacing: -1px;
+    line-height: 1;
+    letter-spacing: -0.05em !important;
     margin-bottom: 0;
     white-space: nowrap;
     opacity: 0;
@@ -63,14 +62,17 @@
 }
 
 .cursor-text-client {
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-top: 5px;
+    font-family: 'Helvetica Neue', 'Helvetica Neue Light', Helvetica, Arial, sans-serif !important;
+    font-size: 20pt !important;
+    font-weight: 300 !important;
+    text-transform: capitalize;
+    line-height: 1.1;
+    letter-spacing: -0.05em !important;
+    margin-top: 4px;
     opacity: 0;
     transition: opacity 0.1s ease;
     display: block;
-    /* Ensure it stacks */
+    white-space: nowrap;
 }
 
 .cursor-follower.active .cursor-text-title,

@@ -1,4 +1,7 @@
-// _cursor.js
+function toCapitalCase(text) {
+    if (!text) return "";
+    return text.toLowerCase().replace(/(^|[\s+\-/])(\p{L})/gu, (_, sep, char) => sep + char.toUpperCase());
+}
 
 export function initCursor() {
     // Only initialize on desktop/hover-capable devices
@@ -43,7 +46,7 @@ export function initCursor() {
             project.addEventListener("mouseenter", () => {
                 cursor.innerHTML = `
           <div class="cursor-text-title">${title}</div>
-          <div class="cursor-text-client">${client}</div>
+          <div class="cursor-text-client">${toCapitalCase(client)}</div>
         `;
                 cursor.classList.add("active");
             });
@@ -73,7 +76,7 @@ export function initCursor() {
                 // Only update if content changed to avoid flicker (optional optimization)
                 const newContent = `
           <div class="cursor-text-title">${title}</div>
-          <div class="cursor-text-client">${client}</div>
+          <div class="cursor-text-client">${toCapitalCase(client)}</div>
         `;
                 if (cursor.innerHTML !== newContent) {
                     cursor.innerHTML = newContent;
