@@ -157,17 +157,23 @@ function getRelativeOffset(slide, vertical) {
 function lockBodyScroll() {
   const scrollY = window.scrollY || window.pageYOffset || 0;
   document.body.dataset.scrollLockY = String(scrollY);
+  document.documentElement.classList.add('scroll-locked');
   document.body.classList.add('scroll-locked');
   document.body.style.position = 'fixed';
   document.body.style.top = `-${scrollY}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
   document.body.style.width = '100%';
 }
 
 function unlockBodyScroll() {
   const y = parseInt(document.body.dataset.scrollLockY || '0', 10) || 0;
+  document.documentElement.classList.remove('scroll-locked');
   document.body.classList.remove('scroll-locked');
   document.body.style.position = '';
   document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
   document.body.style.width = '';
   delete document.body.dataset.scrollLockY;
   window.scrollTo(0, y);
@@ -553,6 +559,9 @@ export function openModal(index) {
     modal.classList.remove("portrait-asset");
   }
   lockBodyScroll();
+  modal.scrollTop = 0;
+  const modalContent = modal.querySelector('.modal-content');
+  if (modalContent) modalContent.scrollTop = 0;
   modal.style.display = "flex";
 }
 
